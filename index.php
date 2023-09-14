@@ -21,14 +21,6 @@
 
 
 
-
-
-
-
-
-
-
-
 <div class="col-4">
   <form>
     <!-- Email input -->
@@ -76,7 +68,7 @@
 </div>
 
     <div class="col-4">
-
+    <a href="evenement.php">Oups</a>
     </div>
 
 
@@ -84,13 +76,6 @@
 
   </div>
 </div>
-
-
-
-
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
