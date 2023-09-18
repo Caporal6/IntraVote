@@ -8,35 +8,78 @@
     <title>Document</title>
 </head>
 <body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 <div class="container">
     <div class="row">
         <div class="col-12">
             <form method="post" action="evenement.php">
+
+
                 <div class="form-group">
                     <label for="">Nom</label>
-                    <input type="text" name="nom" class="form.control" placeholder="name" value=""  >   
-                </div>
-
-                <div class="form-group">
-                    <label for="">Date</label>
-                    <input type="date" name="note" class="form.control" placeholder="" value="" >   
-                </div>
-                
-                <div class="form-group">
-                    <label for="">Département</label>
-                    <input type="text" name="img" class="form.control" placeholder="name" value="" >   
-                </div>
-
-                <div class="form-group">
-                    <label for="">Description</label>
-                    <input type="text" name="commentaire" class="form.control" placeholder="name" value="" >   
+                    <input type="text" name="nom" class="form.control" placeholder="Nom" value=""  >   
                 </div>
 
                 <div class="form-group">
                     <label for="">Lieux</label>
-                    <input type="text" name="commentaire" class="form.control" placeholder="name" value="" >   
+                    <input type="text" name="commentaire" class="form.control" placeholder="Lieux" value="" >   
                 </div>
+
+                <div class="form-group">
+                    <label for="">Date</label>
+                    <input type="date" name="note" class="form.control" placeholder="Date" value="" >   
+                </div>
+                
+                <div class="form-group">
+                    <label for="">Heure</label>
+                    <input type="text" name="heure" class="form.control" placeholder="Heure" value="" >   
+                </div>
+
+                <div class="form-group">
+                    <label for="">Description</label>
+                    <input type="text" name="description" class="form.control" placeholder="Description" value="" >   
+                </div>
+
+                <div class="form-group">
+                    <label for="">Département</label>
+                    <input type="text" name="departement" class="form.control" placeholder="Département" value="" >   
+                </div>
+
 
 
                     <input type="submit">
@@ -46,14 +89,59 @@
 </div>
 
 
-créer
-
-supprimer
-modifier
-
-Voir
 
 
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+        
+                        <th scope="col">#id</th>
+                        <th scope="col">nom</th>
+                        <th scope="col">lieux</th>
+                        <th scope="col">date</th>
+                        <th scope="col">heure</th>
+                        <th scope="col">description</th>
+                        <th scope="col">departement</th>
+                        <th scope="col">vote</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <?php 
+                    
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "Azgt3878";
+                        $db = "intra";
+
+                        // Create connection
+                        $conn = new mysqli($servername, $username, $password, $db);
+                        // Check connection
+
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        $conn->query('SET NAMES utf8'); $sql = "SELECT * FROM evenement";
+                        $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                        // output data of each row
+                            while($row = $result->fetch_assoc()) {
+                                echo '<tr><th scope="row">'. $row["id"].'</th><td>'. $row["nom"].'</td><td>'. $row["lieux"].'</td><td>'. $row["date"].'</td><td>'. $row["heure"].'</td> <td>'. $row["description"].'</td> <td>'. $row["departement"].'</td> <td>'. $row["vote"].'</td></tr>';  }
+                        } else {
+                            echo "0 results";
+                        }
+                        $conn->close();
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
 
 
