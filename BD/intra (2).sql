@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 18 Septembre 2023 à 16:45
+-- Généré le :  Lun 18 Septembre 2023 à 18:33
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -37,6 +37,16 @@ CREATE TABLE `evenement` (
   `vote` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `evenement`
+--
+
+INSERT INTO `evenement` (`id`, `nom`, `lieux`, `date`, `heure`, `description`, `departement`, `vote`) VALUES
+(1, 'initiation', 'randolphe', '4 octobre 2023', '14:15', 'Vraiment un belle endroit pour relax', 'technique trop cool', 15),
+(2, 'xavier', 'mauricie', '2023-09-22', '24:08', 'WoooW je crois que ca marche', 'bite', 0),
+(3, 'xavier', '', '', '', '', '', 0),
+(4, 'xavier', '', '', '', '', '', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -45,7 +55,7 @@ CREATE TABLE `evenement` (
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `user` varchar(250) NOT NULL,
+  `nom` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -53,8 +63,8 @@ CREATE TABLE `user` (
 -- Contenu de la table `user`
 --
 
-INSERT INTO `user` (`id`, `user`, `password`) VALUES
-(1, 'Xavier', '2d7756e46caafd2a0705b6bb3327137d611b4f65');
+INSERT INTO `user` (`id`, `nom`, `password`) VALUES
+(4, 'xavier', 'dc76e9f0c0006e8f919e0c515c66dbba3982f785');
 
 -- --------------------------------------------------------
 
@@ -86,7 +96,7 @@ ALTER TABLE `evenement`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `user` (`user`);
+  ADD UNIQUE KEY `user` (`nom`);
 
 --
 -- Index pour la table `vote`
@@ -102,12 +112,12 @@ ALTER TABLE `vote`
 -- AUTO_INCREMENT pour la table `evenement`
 --
 ALTER TABLE `evenement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `vote`
 --
