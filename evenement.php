@@ -11,18 +11,11 @@
 
 
 <?php
-
-
-
 $nom = $lieux = $date = $heure = $description = $departement = $vote = "";
 $nomErreur = $lieuxErreur = $dateErreur = $heureErreur = $descriptionErreur = $departementErreur = $voteErreur = "";
 $erreur = false;
-
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
-    //CAS #2
-    //On vient de recevoir le formulaire
-    echo "<h1>POST == TRUE </h1>";
-    
+ 
     if(empty($_POST["nom"])){
         $nomErreur = "Le nom ne peut pas être vide";
         $erreur  = true;
@@ -90,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     VALUES('$nom','$lieux','$date','$heure','$description','$departement','0')";
 
     if(mysqli_query($conn,$sql)){
-        echo"Enregistrementréussi";
+        echo"Enregistrement réussi";
     }else{
         echo"Error:".$sql."<br>".mysqli_error($conn);
     }
@@ -98,8 +91,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     
 }
 ?>
-
-
 
 
     <div class="container">
@@ -147,9 +138,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     </div>
 
 
-
-
-
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -165,6 +153,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                         <th scope="col">description</th>
                         <th scope="col">departement</th>
                         <th scope="col">vote</th>
+                        <th scope="col">Modifier</th>
+                        <th scope="col">Supprimer</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -189,7 +179,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                             if ($result->num_rows > 0) {
                         // output data of each row
                             while($row = $result->fetch_assoc()) {
-                                echo '<tr><th scope="row">'. $row["id"].'</th><td>'. $row["nom"].'</td><td>'. $row["lieux"].'</td><td>'. $row["date"].'</td><td>'. $row["heure"].'</td> <td>'. $row["description"].'</td> <td>'. $row["departement"].'</td> <td>'. $row["vote"].'</td></tr>';  }
+                                echo '<tr><th scope="row">'. $row["id"].'</th><td>'. $row["nom"].'</td><td>'. $row["lieux"].'</td><td>'. $row["date"].'</td>
+                                <td>'. $row["heure"].'</td> <td>'. $row["description"].'</td> <td>'. $row["departement"].'</td> 
+                                <td>'. $row["vote"].'</td>
+                                <td>Mod</td>
+                                <td>Supprimer</td>
+                                </tr>';  
+                            }
                         } else {
                             echo "0 results";
                         }
@@ -200,7 +196,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         </div>
     </div>
 </div>
-
 
 
     <?php
