@@ -18,39 +18,36 @@ session_start();
 <?php 
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
-  $user = $_POST['user'];
-  $password = $_POST['password'];
+  $nom = $_POST['nom'];
+  $password = $_POST['mdp'];
 
-
-
-                    
+  $password = sha1($password,false);
+                   
   $servername = "localhost";
-  $username = "root";
-  $password = "Azgt3878";
+  $usernameDB = "root";
+  $passwordDB = "Azgt3878";
   $db = "intra";
 
   // Create connection
-    $conn = new mysqli($servername, $username, $password, $db);
+    $conn = new mysqli($servername, $usernameDB, $passwordDB, $db);
   // Check connection
 
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
 
-  $conn->query('SET NAMES utf8'); $sql = "SELECT * FROM user";
+  $conn->query('SET NAMES utf8'); 
+  $sql = "SELECT * FROM user where nom='$nom' and password='$password'";
+echo $sql;
   $result = $conn->query($sql);
+
   if ($result->num_rows > 0) {
-  // output data of each row
-    while($row = $result->fetch_assoc()) {
-      echo '<tr><th scope="row">'. $row["id"].'</th><td>'. $row["nom"].'</td><td>'. $row["lieux"].'</td><td>'. $row["date"].'</td>
-            <td>'. $row["heure"].'</td> <td>'. $row["description"].'</td> <td>'. $row["departement"].'</td> 
-                            <td>'. $row["vote"].'</td>
-                            <td>Mod</td>
-                            <td>Supprimer</td>
-                            </tr>';  
-      }
+    $row = $result->fetch_assoc();
+    echo "<h1>Connecté</h1>";
+    header('Location: evenement.php');  
+    $_SESSION["connecion"] = true;
     } else {
-    echo "0 results";
+    echo "<h2>Nom d'usager ou mot de passe invalide</h2>";
     }
     $conn->close();
   }
@@ -67,16 +64,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     <div class="col-4"> 
     </div>
     <div class="col-4">
-      <form>
+      <form method="post" action="index.php">
         <!-- Email input -->
         <div class="form-outline mb-4">
-          <input type="text" id="user" class="form-control" />
-          <label class="form-label" for="user">User</label>
+          <input type="text" name="nom" class="form-control" />
+          <label class="form-label" for="nom">User</label>
         </div>
 
         <!-- Password input -->
         <div class="form-outline mb-4">
-          <input type="password" id="mdp" class="form-control" />
+          <input type="password" name="mdp" class="form-control" />
           <label class="form-label" for="mdp">Password</label>
         </div>
 
@@ -98,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
         <!-- Submit button -->
 
-          <button type="button" class="btn btn-primary btn-lg btn-block form-control">Sign in</button>
+          <button type="Submit" class="btn btn-primary btn-lg btn-block form-control">Sign in</button>
 
 
 
