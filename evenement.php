@@ -10,83 +10,141 @@
 <body>
 
 
+<?php
 
 
 
+$nom = $lieux = $date = $heure = $description = $departement = $vote = "";
+$nomErreur = $lieuxErreur = $dateErreur = $heureErreur = $descriptionErreur = $departementErreur = $voteErreur = "";
+$erreur = false;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if ($_SERVER['REQUEST_METHOD'] == "POST"){
+    //CAS #2
+    //On vient de recevoir le formulaire
+    echo "<h1>POST == TRUE </h1>";
     
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <form method="post" action="evenement.php">
+    if(empty($_POST["nom"])){
+        $nomErreur = "Le nom ne peut pas être vide";
+        $erreur  = true;
+    }
+    else{
+        $nom = trojan($_POST["nom"]);
+    }
+
+    if(empty($_POST["lieux"])){
+        $lieuxErreur = "Où ce situe l'évenement ?";
+        $erreur  = true;
+    }
+    else{
+        $lieux = trojan($_POST["lieux"]);
+    }
 
 
-                <div class="form-group">
-                    <label for="">Nom</label>
-                    <input type="text" name="nom" class="form.control" placeholder="Nom" value=""  >   
-                </div>
+    if(empty($_POST["date"])){
+        $dateErreur = "Quand ce déroule l'évenement ?";
+        $erreur  = true;
+    }
+    else{
+        $date = trojan($_POST["date"]);
+    }
 
-                <div class="form-group">
-                    <label for="">Lieux</label>
-                    <input type="text" name="commentaire" class="form.control" placeholder="Lieux" value="" >   
-                </div>
+    if(empty($_POST["heure"])){
+        $heureErreur = "À qu'elle heure ce déroule l'évenement ?";
+        $erreur  = true;
+    }
+    else{
+        $heure = trojan($_POST["heure"]);
+    }
 
-                <div class="form-group">
-                    <label for="">Date</label>
-                    <input type="date" name="note" class="form.control" placeholder="Date" value="" >   
-                </div>
-                
-                <div class="form-group">
-                    <label for="">Heure</label>
-                    <input type="text" name="heure" class="form.control" placeholder="Heure" value="" >   
-                </div>
+    if(empty($_POST["description"])){
+        $descriptionErreur = "Ouais la jsp ????";
+        $erreur  = true;
+    }
+    else{
+        $description = trojan($_POST["description"]);
+    }
 
-                <div class="form-group">
-                    <label for="">Description</label>
-                    <input type="text" name="description" class="form.control" placeholder="Description" value="" >   
-                </div>
-
-                <div class="form-group">
-                    <label for="">Département</label>
-                    <input type="text" name="departement" class="form.control" placeholder="Département" value="" >   
-                </div>
-
+    if(empty($_POST["departement"])){
+        $departementErreur = "Qu'elle département ?";
+        $erreur  = true;
+    }
+    else{
+        $departement = trojan($_POST["departement"]);
+    }
 
 
-                    <input type="submit">
-            </form>
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "Azgt3878";
+    $dbname = "intra";
+
+    $conn=mysqli_connect($servername,$username,$password,$dbname);
+
+    //Checkconnection
+    if(!$conn){
+    die("Connectionfailed:".mysqli_connect_error());
+    }
+
+    $sql=" INSERT INTO  evenement(nom,lieux,date,heure,description,departement)
+    VALUES('$nom','$lieux','$date','$heure','$description','$departement')";
+
+    if(mysqli_query($conn,$sql)){
+        echo"Enregistrementréussi";
+    }else{
+        echo"Error:".$sql."<br>".mysqli_error($conn);
+    }
+    mysqli_close($conn);
+    
+}
+?>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form method="post" action="evenement.php">
+
+
+                    <div class="form-group">
+                        <label for="">Nom</label>
+                        <input type="text" name="nom" class="form.control" placeholder="Nom" value=""  >   
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Lieux</label>
+                        <input type="text" name="commentaire" class="form.control" placeholder="Lieux" value="" >   
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Date</label>
+                        <input type="date" name="note" class="form.control" placeholder="Date" value="" >   
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="">Heure</label>
+                        <input type="text" name="heure" class="form.control" placeholder="Heure" value="" >   
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <input type="text" name="description" class="form.control" placeholder="Description" value="" >   
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Département</label>
+                        <input type="text" name="departement" class="form.control" placeholder="Département" value="" >   
+                    </div>
+
+
+
+                        <input type="submit">
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 
 
@@ -144,6 +202,19 @@
 </div>
 
 
+
+    <?php
+
+
+        function trojan($data){
+            $data = trim($data); //Enleve les caractères invisibles
+            $data = addslashes($data); //Mets des backslashs devant les ' et les  "
+            $data = htmlspecialchars($data); // Remplace les caractères spéciaux par leurs symboles comme ­< devient &lt;
+            
+            return $data;
+        }
+
+    ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
