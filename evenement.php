@@ -86,8 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     die("Connectionfailed:".mysqli_connect_error());
     }
 
-    $sql=" INSERT INTO  evenement(nom,lieux,date,heure,description,departement)
-    VALUES('$nom','$lieux','$date','$heure','$description','$departement')";
+    $sql=" INSERT INTO  evenement(nom,lieux,date,heure,description,departement,vote)
+    VALUES('$nom','$lieux','$date','$heure','$description','$departement','0')";
 
     if(mysqli_query($conn,$sql)){
         echo"Enregistrementréussi";
@@ -115,12 +115,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
                     <div class="form-group">
                         <label for="">Lieux</label>
-                        <input type="text" name="commentaire" class="form.control" placeholder="Lieux" value="" >   
+                        <input type="text" name="lieux" class="form.control" placeholder="Lieux" value="" >   
                     </div>
 
                     <div class="form-group">
                         <label for="">Date</label>
-                        <input type="date" name="note" class="form.control" placeholder="Date" value="" >   
+                        <input type="date" name="date" class="form.control" placeholder="Date" value="" >   
                     </div>
                     
                     <div class="form-group">
