@@ -15,6 +15,8 @@ session_start();
 
 
 <?php
+
+
 $nom = $lieux = $date = $heure = $description = $departement = $vote = "";
 $nomErreur = $lieuxErreur = $dateErreur = $heureErreur = $descriptionErreur = $departementErreur = $voteErreur = "";
 $erreur = false;
@@ -183,10 +185,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                             if ($result->num_rows > 0) {
                         // output data of each row
                             while($row = $result->fetch_assoc()) {
+                                $var_value = $row["id"];
                                 echo '<tr><th scope="row">'. $row["id"].'</th><td>'. $row["nom"].'</td><td>'. $row["lieux"].'</td><td>'. $row["date"].'</td>
                                 <td>'. $row["heure"].'</td> <td>'. $row["description"].'</td> <td>'. $row["departement"].'</td> 
                                 <td>'. $row["vote"].'</td>
-                                <td>Mod</td>
+                                <td><a href="modifier.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">modifier.php</a>   </td>
                                 <td>Supprimer</td>
                                 </tr>';  
                             }
