@@ -16,10 +16,15 @@ session_start();
 <body>
     
 <?php
+    $var_value = $_GET['varname'];
+    $id = $var_value;
+    echo $id;
+
 $nom = $lieux = $date = $heure = $description = $departement = $vote = "";
 $nomErreur = $lieuxErreur = $dateErreur = $heureErreur = $descriptionErreur = $departementErreur = $voteErreur = "";
 $erreur = false;
-if ($_SERVER['REQUEST_METHOD'] == "POST"){
+
+if (isset($_POST['update']) && !empty($_GET['varname'])){
  
     if(empty($_POST["nom"])){
         $nomErreur = "Le nom ne peut pas être vide";
@@ -70,12 +75,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $departement = trojan($_POST["departement"]);
     }
 
-
-
     $servername = "localhost";
     $username = "root";
     $password = "Azgt3878";
     $dbname = "intra";
+
+
 
     $conn=mysqli_connect($servername,$username,$password,$dbname);
 
@@ -84,68 +89,107 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     die("Connectionfailed:".mysqli_connect_error());
     }
 
-    $sql=" INSERT INTO  evenement(nom,lieux,date,heure,description,departement,vote)
-    VALUES('$nom','$lieux','$date','$heure','$description','$departement','0')";
+    $conn->query('SET NAMES utf8'); $sql = "UPDATE evenement SET nom = '$nom', lieux = '$lieux', date = '$date', heure = '$heure', description = '$description', departement = '$departement' WHERE id='$id'";
+    $result = $conn->query($sql);
 
-    if(mysqli_query($conn,$sql)){
-        echo"Enregistrement réussi";
-    }else{
-        echo"Error:".$sql."<br>".mysqli_error($conn);
+        if ($result) {
+            header('Location: evenement.php');   
+    } else {
+        echo "0 results";
     }
-    mysqli_close($conn);
-    
+    $conn->close();
 
 }
+
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "Azgt3878";
+    $dbname = "intra";
+
+
+
+    $conn=mysqli_connect($servername,$username,$password,$dbname);
+
+    //Checkconnection
+    if(!$conn){
+    die("Connectionfailed:".mysqli_connect_error());
+    }
+
+    $conn->query('SET NAMES utf8'); $sql = "SELECT * FROM evenement WHERE id='$id'";
+    $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+    // output data of each row
+        while($row = $result->fetch_assoc()) {
+            $nomT = $row['nom'];
+            $lieuxT = $row['lieux'];
+            $dateT = $row['date'];
+            $heureT = $row['heure'];
+            $descriptionT = $row['description'];
+            $departementT = $row['departement'];
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+
+
 ?>
 
 
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form method="post" action="evenement.php">
+                <form method="post" action="">
 
 
                     <div class="form-group">
                         <label for="">Nom</label>
-                        <input type="text" name="nom" class="form.control" placeholder="Nom" value=""  >   
+                        <input type="text" name="nom" class="form.control" placeholder="Nom" value="<?php echo $nomT;?>"  >   
                     </div>
 
                     <div class="form-group">
                         <label for="">Lieux</label>
-                        <input type="text" name="lieux" class="form.control" placeholder="Lieux" value="" >   
+                        <input type="text" name="lieux" class="form.control" placeholder="Lieux" value="<?php echo $lieuxT;?>" >   
                     </div>
 
                     <div class="form-group">
                         <label for="">Date</label>
-                        <input type="date" name="date" class="form.control" placeholder="Date" value="" >   
+                        <input type="date" name="date" class="form.control" placeholder="Date" value="<?php echo $dateT;?>" >   
                     </div>
                     
                     <div class="form-group">
                         <label for="">Heure</label>
-                        <input type="text" name="heure" class="form.control" placeholder="Heure" value="" >   
+                        <input type="text" name="heure" class="form.control" placeholder="Heure" value="<?php echo $heureT;?>" >   
                     </div>
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <input type="text" name="description" class="form.control" placeholder="Description" value="" >   
+                        <input type="text" name="description" class="form.control" placeholder="Description" value="<?php echo $descriptionT;?>" >   
                     </div>
 
                     <div class="form-group">
                         <label for="">Département</label>
-                        <input type="text" name="departement" class="form.control" placeholder="Département" value="" >   
+                        <input type="text" name="departement" class="form.control" placeholder="Département" value="<?php echo $departementT;?>" >   
                     </div>
 
-                        <input type="submit">
+                        <input type="submit" name="update">
                 </form>
             </div>
         </div>
     </div>
 
-    <?php 
-    
-    $var_value = $_GET['varname'];
-    echo $var_value;
-    
+    <?php
+
+
+        function trojan($data){
+            $data = trim($data); //Enleve les caractères invisibles
+            $data = addslashes($data); //Mets des backslashs devant les ' et les  "
+            $data = htmlspecialchars($data); // Remplace les caractères spéciaux par leurs symboles comme ­< devient &lt;
+            
+            return $data;
+        }
+
     ?>
 
 
