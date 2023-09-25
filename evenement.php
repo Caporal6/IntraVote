@@ -161,6 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                         <th scope="col">vote</th>
                         <th scope="col">Modifier</th>
                         <th scope="col">Supprimer</th>
+                        <th scope="col">Vote</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -191,6 +192,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                                 <td>'. $row["vote"].'</td>
                                 <td><a href="modifier.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">modifier.php</a>   </td>
                                 <td><a href="supprimer.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Supprimer</a></td>
+                                <td><a href="vote.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Voter</a></td>
                                 </tr>';  
                             }
                         } else {
