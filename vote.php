@@ -9,9 +9,29 @@
     <title>Document</title>
 </head>
 <body>
-    
+<?php 
+  $bon;
 
+echo $bon;
+?>
 
+    <div class="container container h-100 d-flex justify-content-center align-items-center">
+        <div class="row ">
+            <form method="post">
+            <div class="col-4 d-flex justify-content-center ">
+                <button type="button" class="btn btn-success btn-lg" onclick="<?php $bon++;?>">Primary</button>
+            </div>
+
+            <div class="col-4 d-flex justify-content-center">
+                <button type="button" class="btn btn-warning btn-lg">Primary</button>
+            </div>
+
+            <div class="col-4 d-flex justify-content-center">
+                <button type="button" class="btn btn-danger btn-lg">Primary</button>
+            </div>
+            </form>
+        </div>
+    </div>
 
 
 
