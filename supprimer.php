@@ -1,3 +1,7 @@
+<?php
+// On démarre toujours la session en haut et dans tous les fichiers.
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
