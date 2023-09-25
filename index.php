@@ -38,16 +38,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
   $conn->query('SET NAMES utf8'); 
   $sql = "SELECT * FROM user where nom='$nom' and password='$password'";
-echo $sql;
+  //echo $sql;
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    echo "<h1>Connecté</h1>";
+    //echo "<h1>Connecté</h1>";
     header('Location: evenement.php');  
     $_SESSION["connecion"] = true;
     } else {
-    echo "<h2>Nom d'usager ou mot de passe invalide</h2>";
+    //echo "<h2>Nom d'usager ou mot de passe invalide</h2>";
     }
     $conn->close();
   }
@@ -103,21 +103,19 @@ echo $sql;
 
         <!-- Register buttons -->
         <div class="text-center">
-          <p>Not a member? <a href="#!">Register</a></p>
+          <p>Not a member? <a href="ajouterAdmin.php">Register</a></p>
           
         </div>
       </form>
     </div>
-    <div class="col-4">
-      <a href="evenement.php">Oups</a>
-    </div>
+
   </div>
 </div>
 
 <?php
   // Set session variables
     $_SESSION["connexion"] = true; 
-    echo "La connexion est réussie" . $_SESSION["connexion"];
+
 ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
