@@ -1,3 +1,25 @@
+<?php
+// On démarre toujours la session en haut et dans tous les fichiers.
+session_start();
+if(!isset($_POST['bon']) && !isset($_POST['boff']) && !isset($_POST['mauvais'])){
+    $_SESSION['attnumBon'] = 1;
+    $_SESSION['attnumBoff'] = 1;
+    $_SESSION['attnumMauvais'] = 1;
+}
+else{
+    if (isset($_POST['bon'])) {
+        $_SESSION['attnumBon']++;
+    } 
+    elseif(isset($_POST['boff'])){
+        $_SESSION['attnumBoff']++;
+    }
+    elseif(isset($_POST['mauvais'])){
+        $_SESSION['attnumMauvais']++;
+    }
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,30 +31,30 @@
     <title>Document</title>
 </head>
 <body>
-<?php 
-  $bon;
 
-echo $bon;
-?>
 
     <div class="container container h-100 d-flex justify-content-center align-items-center">
         <div class="row ">
             <form method="post">
             <div class="col-4 d-flex justify-content-center ">
-                <button type="button" class="btn btn-success btn-lg" onclick="<?php $bon++;?>">Primary</button>
+                <input name='bon' type="submit" value='+'>
+
             </div>
 
             <div class="col-4 d-flex justify-content-center">
-                <button type="button" class="btn btn-warning btn-lg">Primary</button>
+                <input name='boff' type="submit" value='+'>
             </div>
 
             <div class="col-4 d-flex justify-content-center">
-                <button type="button" class="btn btn-danger btn-lg">Primary</button>
+                <input name='mauvais' type="submit" value='+'>  
             </div>
             </form>
         </div>
     </div>
 
+    <h3><em>Bon:<?php echo $_SESSION['attnumBon'] ?>: </em></h3>
+    <h3><em>Boff:<?php echo $_SESSION['attnumBoff'] ?>: </em></h3>
+    <h3><em>Mauvais:<?php echo $_SESSION['attnumMauvais'] ?>: </em></h3>
 
 
 
