@@ -1,22 +1,6 @@
 <?php
 // On démarre toujours la session en haut et dans tous les fichiers.
 session_start();
-if(!isset($_POST['bon']) && !isset($_POST['boff']) && !isset($_POST['mauvais'])){
-    $_SESSION['attnumBon'] = 1;
-    $_SESSION['attnumBoff'] = 1;
-    $_SESSION['attnumMauvais'] = 1;
-}
-else{
-    if (isset($_POST['bon'])) {
-        $_SESSION['attnumBon']++;
-    } 
-    elseif(isset($_POST['boff'])){
-        $_SESSION['attnumBoff']++;
-    }
-    elseif(isset($_POST['mauvais'])){
-        $_SESSION['attnumMauvais']++;
-    }
-}
 
 
 ?>
@@ -32,32 +16,20 @@ else{
 </head>
 <body>
 
-
-    <div class="container container h-100 d-flex justify-content-center align-items-center">
-        <div class="row ">
-            <form method="post">
-            <div class="col-4 d-flex justify-content-center ">
-                <input name='bon' type="submit" value='+'>
-
-            </div>
-
-            <div class="col-4 d-flex justify-content-center">
-                <input name='boff' type="submit" value='+'>
-            </div>
-
-            <div class="col-4 d-flex justify-content-center">
-                <input name='mauvais' type="submit" value='+'>  
-            </div>
-            </form>
-        </div>
-    </div>
-
-    <h3><em>Bon:<?php echo $_SESSION['attnumBon'] ?>: </em></h3>
-    <h3><em>Boff:<?php echo $_SESSION['attnumBoff'] ?>: </em></h3>
-    <h3><em>Mauvais:<?php echo $_SESSION['attnumMauvais'] ?>: </em></h3>
-
     <a href="evenement.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Evenement.php</a> 
 
+<?php 
+
+if ($_SERVER['REQUEST_METHOD'] == "POST"){
+    
+
+}
+
+?>
+
+
+
+    
 
 <div class="container">
     <div class="row">
@@ -69,9 +41,6 @@ else{
                         <th scope="col">#id</th>
                         <th scope="col">vote_etudiant</th>
                         <th scope="col">vote_employeur</th>
-                        <th scope="col">bon</th>
-                        <th scope="col">boff</th>
-                        <th scope="col">mauvais</th>
   
                     </tr>
                 </thead>
@@ -98,8 +67,7 @@ else{
                         // output data of each row
                             while($row = $result->fetch_assoc()) {
                                 $var_value = $row["id"];
-                                echo '<tr><th scope="row">'. $row["id"].'</th><td>'. $row["vote_etudiant"].'</td><td>'. $row["vote_employeur"].'</td><td>'. $row["bon"].'</td>
-                                <td>'. $row["moyen"].'</td> <td>'. $row["mauvais"].'</td> 
+                                echo '<tr><th scope="row">'. $row["id"].'</th><td>'. $row["vote_etudiant"].'</td><td>'. $row["vote_employeur"].'</td> 
                                 </tr>'; 
                             }
                         } else {
