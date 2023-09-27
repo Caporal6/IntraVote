@@ -26,10 +26,25 @@ $var_value = $_GET['varname'];
 $id = $var_value;
 
 
-if (isset($_POST['next']) && !empty($_GET['varname'])){
 
-    $bon = $_POST["bon"];
-    $bon++;
+
+if (isset($_POST['bon']) || isset($_POST['moyen']) || isset($_POST['mauvais']) && !empty($_GET['varname'])){
+    
+    $bon2 = $_POST["bon2"]; 
+    $moyen2 = $_POST["moyen2"]; 
+    $mauvais2 = $_POST["mauvais2"]; 
+
+    if(isset($_POST['bon']))
+        $bon2++;
+
+    if(isset($_POST['moyen']))
+        $moyen2++;
+
+    if(isset($_POST['mauvais']))
+        $mauvais2++;
+
+
+
 
 $servername = "localhost";
 $username = "root";
@@ -45,7 +60,7 @@ if(!$conn){
 die("Connectionfailed:".mysqli_connect_error());
 }
 
-$conn->query('SET NAMES utf8'); $sql = "UPDATE vote SET vote_etudiant = '$bon' WHERE id = '$id'";
+$conn->query('SET NAMES utf8'); $sql = "UPDATE vote SET bon = '$bon2', moyen = '$moyen2', mauvais = '$mauvais2' WHERE id = '$id'";
 $result = $conn->query($sql);
 
     if ($result) {
@@ -106,8 +121,11 @@ $conn->close();
                         // output data of each row
                             while($row = $result->fetch_assoc()) {
                                 $var_value = $row["id"];
+                                $bon = $row["bon"];
+                                $moyen = $row["moyen"];
+                                $mauvais = $row["mauvais"];
                                 echo '<tr><th scope="row">'. $row["id"].'</th><td>'. $row["vote_etudiant"].'</td><td>'. $row["vote_employeur"].'</td> 
-                                <td>'. $row["bon"].'</td>
+                                <td>'. $bon.'</td>
                                 <td>'. $row["moyen"].'</td>
                                 <td>'. $row["mauvais"].'</td>
                                 </tr>'; 
@@ -147,13 +165,14 @@ $conn->close();
 
 
                             <form action="" method="POST">
+                                <input class="big_b" type="hidden" name="bon2" value="<?php echo $bon ?>" /> 
                                 <input class="big_b" type="submit" name="bon" value="Next" /> 
+                                <input class="big_b" type="hidden" name="moyen2" value="<?php echo $moyen ?>" /> 
                                 <input class="big_b" type="submit" name="moyen" value="Next" /> 
+                                <input class="big_b" type="hidden" name="mauvais2" value="<?php echo $mauvais ?>" /> 
                                 <input class="big_b" type="submit" name="mauvais" value="Next" /> 
 
                             </form>
-
-
 
                 </tbody>
             </table>
