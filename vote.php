@@ -18,19 +18,19 @@ session_start();
 
     <a href="evenement.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Evenement.php</a> 
 
-<?php 
 
-if ($_SERVER['REQUEST_METHOD'] == "POST"){
-    
-
-}
-
-?>
 
 
 
     
 
+
+
+
+
+
+
+    
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -41,6 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                         <th scope="col">#id</th>
                         <th scope="col">vote_etudiant</th>
                         <th scope="col">vote_employeur</th>
+                        <th scope="col">bon</th>
+                        <th scope="col">moyen</th>
+                        <th scope="col">mauvais</th>
   
                     </tr>
                 </thead>
@@ -68,6 +71,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                             while($row = $result->fetch_assoc()) {
                                 $var_value = $row["id"];
                                 echo '<tr><th scope="row">'. $row["id"].'</th><td>'. $row["vote_etudiant"].'</td><td>'. $row["vote_employeur"].'</td> 
+                                <td>'. $row["bon"].'</td>
+                                <td>'. $row["moyen"].'</td>
+                                <td>'. $row["mauvais"].'</td>
                                 </tr>'; 
                             }
                         } else {
