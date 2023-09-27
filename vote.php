@@ -20,6 +20,42 @@ session_start();
 
 
 
+<?php
+
+$var_value = $_GET['varname'];
+$id = $var_value;
+
+
+if (isset($_POST['next']) && !empty($_GET['varname'])){
+
+    $bon = $_POST["bon"];
+    $bon++;
+
+$servername = "localhost";
+$username = "root";
+$password = "Azgt3878";
+$dbname = "intra";
+
+
+
+$conn=mysqli_connect($servername,$username,$password,$dbname);
+
+//Checkconnection
+if(!$conn){
+die("Connectionfailed:".mysqli_connect_error());
+}
+
+$conn->query('SET NAMES utf8'); $sql = "UPDATE vote SET vote_etudiant = '$bon' WHERE id = '$id'";
+$result = $conn->query($sql);
+
+    if ($result) {
+} else {
+    echo "0 results";
+}
+$conn->close();
+}
+?>
+
 
 
     
@@ -30,7 +66,7 @@ session_start();
 
 
 
-    
+
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -80,7 +116,45 @@ session_start();
                             echo "0 results";
                         }
                         $conn->close();
-                    ?>
+
+
+
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "Azgt3878";
+                        $db = "intra";
+
+                        // Create connection
+                        $conn = new mysqli($servername, $username, $password, $db);
+                        // Check connection
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        $conn->query('SET NAMES utf8'); $sql = "SELECT vote_etudiant FROM vote";
+                        $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                        // output data of each row
+                            while($row = $result->fetch_assoc()) {
+                                $voteEtudiant = $row["vote_etudiant"];
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+                        $conn->close();
+
+                        ?>
+
+
+                            <form action="" method="POST">
+                                <input class="big_b" type="submit" name="bon" value="Next" /> 
+                                <input class="big_b" type="submit" name="moyen" value="Next" /> 
+                                <input class="big_b" type="submit" name="mauvais" value="Next" /> 
+
+                            </form>
+
+
+
                 </tbody>
             </table>
         </div>
