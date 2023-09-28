@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 25 Septembre 2023 à 18:19
+-- Généré le :  Jeu 28 Septembre 2023 à 20:44
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -42,8 +42,9 @@ CREATE TABLE `evenement` (
 --
 
 INSERT INTO `evenement` (`id`, `nom`, `lieux`, `date`, `heure`, `description`, `departement`, `vote`) VALUES
-(1, 'Nope', 'randolphe', '2023-09-08', '14:15', 'Vraiment un belle endroit pour relax', 'technique trop cool', 15),
-(2, 'xavier', 'mauricie', '2023-09-22', '24:08', 'WoooW je crois que ca marche', 'bite', 0);
+(1, 'werwe', '234', '2023-09-04', '234', '234', 'DEC-Bac en marketing', 15),
+(6, 'YESSSIRRRR', '95', '2023-09-05', '234', 'wer', 'wer', 0),
+(11, 'rty', 'rty', '2023-09-05', '18:32', 'rtyrty', 'Techniques de design dinterieur', 0);
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `nom`, `password`) VALUES
 (4, 'xavier', 'dc76e9f0c0006e8f919e0c515c66dbba3982f785'),
-(8, 'Benjamin', '5898fc860300e228dcd54c0b1045b5fa0dcda502');
+(5, 'yo', '5898fc860300e228dcd54c0b1045b5fa0dcda502');
 
 -- --------------------------------------------------------
 
@@ -74,15 +75,18 @@ INSERT INTO `user` (`id`, `nom`, `password`) VALUES
 CREATE TABLE `vote` (
   `id` int(11) NOT NULL,
   `vote_etudiant` int(11) NOT NULL,
-  `vote_employeur` int(11) NOT NULL
+  `vote_employeur` int(11) NOT NULL,
+  `bon` int(11) NOT NULL,
+  `moyen` int(11) NOT NULL,
+  `mauvais` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `vote`
 --
 
-INSERT INTO `vote` (`id`, `vote_etudiant`, `vote_employeur`) VALUES
-(1, 5, 10);
+INSERT INTO `vote` (`id`, `vote_etudiant`, `vote_employeur`, `bon`, `moyen`, `mauvais`) VALUES
+(1, 15, 42, 52, 114, 73);
 
 -- --------------------------------------------------------
 
@@ -91,20 +95,19 @@ INSERT INTO `vote` (`id`, `vote_etudiant`, `vote_employeur`) VALUES
 --
 
 CREATE TABLE `vote_employeur` (
-  `Vote` int(250) NOT NULL,
   `id` int(11) NOT NULL,
-  `bon` int(250) NOT NULL,
-  `boff` int(250) NOT NULL,
-  `mauvais` int(250) NOT NULL
+  `Nombre` int(250) NOT NULL DEFAULT '0',
+  `Bon` int(250) NOT NULL DEFAULT '0',
+  `Moyen` int(250) NOT NULL DEFAULT '0',
+  `Mauvais` int(250) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `vote_employeur`
 --
 
-INSERT INTO `vote_employeur` (`Vote`, `id`, `bon`, `boff`, `mauvais`) VALUES
-(250, 1, 0, 0, 0),
-(233, 2, 0, 0, 0);
+INSERT INTO `vote_employeur` (`id`, `Nombre`, `Bon`, `Moyen`, `Mauvais`) VALUES
+(1, 31, 11, 12, 10);
 
 -- --------------------------------------------------------
 
@@ -113,19 +116,19 @@ INSERT INTO `vote_employeur` (`Vote`, `id`, `bon`, `boff`, `mauvais`) VALUES
 --
 
 CREATE TABLE `vote_etudiant` (
-  `Vote` int(250) NOT NULL,
   `id` int(11) NOT NULL,
-  `bon` int(250) NOT NULL,
-  `boff` int(250) NOT NULL,
-  `mauvais` int(250) NOT NULL
+  `Nombre` int(250) NOT NULL,
+  `Bon` int(250) NOT NULL,
+  `Moyen` int(250) NOT NULL,
+  `Mauvais` int(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `vote_etudiant`
 --
 
-INSERT INTO `vote_etudiant` (`Vote`, `id`, `bon`, `boff`, `mauvais`) VALUES
-(200, 1, 0, 0, 0);
+INSERT INTO `vote_etudiant` (`id`, `Nombre`, `Bon`, `Moyen`, `Mauvais`) VALUES
+(1, 59, 30, 28, 29);
 
 --
 -- Index pour les tables exportées
@@ -170,12 +173,12 @@ ALTER TABLE `vote_etudiant`
 -- AUTO_INCREMENT pour la table `evenement`
 --
 ALTER TABLE `evenement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `vote`
 --
@@ -185,22 +188,12 @@ ALTER TABLE `vote`
 -- AUTO_INCREMENT pour la table `vote_employeur`
 --
 ALTER TABLE `vote_employeur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `vote_etudiant`
 --
 ALTER TABLE `vote_etudiant`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- Contraintes pour les tables exportées
---
-
---
--- Contraintes pour la table `vote_etudiant`
---
-ALTER TABLE `vote_etudiant`
-  ADD CONSTRAINT `fk_foreign_key_name` FOREIGN KEY (`id`) REFERENCES `vote` (`id`);
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
