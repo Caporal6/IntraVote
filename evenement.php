@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                     
                     <div class="form-group">
                         <label for="">Heure</label>
-                        <input type="text" name="heure" class="form.control" placeholder="Heure" value="" >   
+                        <input type="time" name="heure" class="form.control" placeholder="Heure" value="" >   
                     </div>
 
                     <div class="form-group">
@@ -132,7 +132,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
                     <div class="form-group">
                         <label for="">Département</label>
-                        <input type="text" name="departement" class="form.control" placeholder="Département" value="" >   
+                        <!--<input type="text"  class="form.control" placeholder="Département" value="" > -->
+                            <select class="" name="departement">
+                                <option>Techniques de design dinterieur</option>
+                                <option>Technologie du genie metallurgique</option>
+                                <option>DEC-Bac en marketing</option>
+                                <option>Musique</option>
+                            </select>   
                     </div>
 
 
@@ -192,7 +198,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                                 <td>'. $row["vote"].'</td>
                                 <td><a href="modifier.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">modifier.php</a>   </td>
                                 <td><a href="supprimer.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Supprimer</a></td>
-                                <td><a href="vote.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Voter</a></td>
+                                <td><a href="choixVote.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Voter</a></td>
                                 </tr>';  
                             }
                         } else {
@@ -207,7 +213,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 </div>
 
 
-    <?php
+
+
+   
+   
+   
+   
+   <?php
 
 
         function trojan($data){

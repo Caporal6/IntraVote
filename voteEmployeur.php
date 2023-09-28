@@ -68,7 +68,7 @@ if(!$conn){
 die("Connectionfailed:".mysqli_connect_error());
 }
 
-$conn->query('SET NAMES utf8'); $sql = "UPDATE vote_etudiant SET bon = '$bon2',  nombre = '$nombre2', moyen = '$moyen2', mauvais = '$mauvais2' WHERE id = '$id'";
+$conn->query('SET NAMES utf8'); $sql = "UPDATE vote_employeur SET bon = '$bon2',  nombre = '$nombre2', moyen = '$moyen2', mauvais = '$mauvais2' WHERE id = '$id'";
 $result = $conn->query($sql);
 
     if ($result) {
@@ -122,7 +122,7 @@ $conn->close();
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $conn->query('SET NAMES utf8'); $sql = "SELECT * FROM vote_etudiant";
+                        $conn->query('SET NAMES utf8'); $sql = "SELECT * FROM vote_employeur";
                         $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                         // output data of each row
@@ -157,12 +157,12 @@ $conn->close();
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $conn->query('SET NAMES utf8'); $sql = "SELECT vote_etudiant FROM vote";
+                        $conn->query('SET NAMES utf8'); $sql = "SELECT vote_employeur FROM vote";
                         $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                         // output data of each row
                             while($row = $result->fetch_assoc()) {
-                                $voteEtudiant = $row["vote_etudiant"];
+                                $voteEtudiant = $row["vote_employeur"];
                             }
                         } else {
                             echo "0 results";
