@@ -170,7 +170,12 @@ if (isset($_POST['update']) && !empty($_GET['varname'])){
 
                     <div class="form-group">
                         <label for="">Département</label>
-                        <input type="text" name="departement" class="form.control" placeholder="Département" value="<?php echo $departementT;?>" >   
+                        <select class="" name="departement">
+                                <option>Techniques de design dinterieur</option>
+                                <option>Technologie du genie metallurgique</option>
+                                <option>DEC-Bac en marketing</option>
+                                <option>Musique</option>
+                            </select>   
                     </div>
 
                         <input type="submit" name="update">
