@@ -166,19 +166,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
             </div>
 
 
-            <div class="col-6 border d-flex justify-content-center">
-                    <div class="col-4 border">
-
+            <div class="col-6 border d-flex justify-content-center ">
+                    <div class="col-4 border d-flex justify-content-center flex-wrap align-content-center">
+                        <h1>Icon</h1>
                     </div>
 
 
-                    <div class="col-4 border">
-                        
+                    <div class="col-4 border d-flex justify-content-center flex-wrap align-content-center">
+                    <h1>Nom</h1>
                         </div>
 
 
-                    <div class="col-4 border">
-                        
+                    <div class="col-4 border d-flex justify-content-center flex-wrap align-content-center">
+                    <a href="toutAdmin.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Info</a>
                         </div>
             
 
