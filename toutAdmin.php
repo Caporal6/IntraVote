@@ -30,6 +30,8 @@ session_start();
                         <th scope="col">#id</th>
                         <th scope="col">nom</th>
                         <th scope="col">password</th>
+                        <th scope="col">modifier</th>
+                        <th scope="col">supprimer</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -69,6 +71,9 @@ session_start();
                     ?>
                 </tbody>
             </table>
+
+
+            <a href="evenement.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Evenement.php</a>
         </div>
     </div>
 </div>

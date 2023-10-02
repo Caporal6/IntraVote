@@ -16,7 +16,38 @@ session_start();
     
 
 
+<?php 
+    $var_value = $_GET['varname'];
+    $id = $var_value;
+    echo $id;
 
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "Azgt3878";
+    $dbname = "intra";
+
+
+    //Createconnection
+    $conn=new mysqli($servername,$username,$password,$dbname);
+    //Checkconnection
+    if($conn->connect_error){
+    die("Connectionfailed:".$conn->connect_error);
+    }
+    //sqltodeletearecord
+    $sql="DELETE FROM user WHERE id='$id'";
+    if($conn->query($sql)===TRUE){
+        header('Location: toutAdmin.php'); 
+    echo"Record deleted successfully";
+    }else{
+    echo"Error deleting record:".$conn->error;
+    }$conn->close();
+    
+
+
+
+
+?>
 
 
 
