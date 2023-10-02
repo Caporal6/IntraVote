@@ -45,10 +45,59 @@ echo $var_value;
 
 
 
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "Azgt3878";
+$dbname = "intra";
+
+$conn=mysqli_connect($servername,$username,$password,$dbname);
 
 
 
 
+if(!$conn){
+        die("Connectionfailed:".mysqli_connect_error());
+        }
+    
+        $sql=" INSERT INTO  vote_employeur(id,nombre,bon,moyen,mauvais)
+        VALUES('$var_value','0','0','0','0')";
+    
+        if(mysqli_query($conn,$sql)){
+            echo"Enregistrement réussi";
+        }else{
+            echo"Error:".$sql."<br>".mysqli_error($conn);
+        }
+        mysqli_close($conn);
+
+
+        $servername = "localhost";
+        $username = "root";
+        $password = "Azgt3878";
+        $dbname = "intra";
+        
+        $conn=mysqli_connect($servername,$username,$password,$dbname);
+        
+        
+        
+        
+        if(!$conn){
+                die("Connectionfailed:".mysqli_connect_error());
+                }
+            
+                $sql=" INSERT INTO  vote_etudiant(id,nombre,bon,moyen,mauvais)
+                VALUES('$var_value','0','0','0','0')";
+            
+                if(mysqli_query($conn,$sql)){
+                    echo"Enregistrement réussi";
+                }else{
+                    echo"Error:".$sql."<br>".mysqli_error($conn);
+                }
+                mysqli_close($conn);
+
+
+?>
 
 
 

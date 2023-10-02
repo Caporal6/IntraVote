@@ -122,7 +122,7 @@ $conn->close();
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $conn->query('SET NAMES utf8'); $sql = "SELECT * FROM vote_etudiant";
+                        $conn->query('SET NAMES utf8'); $sql = "SELECT * FROM vote_etudiant WHERE id = $id";
                         $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                         // output data of each row
@@ -157,7 +157,7 @@ $conn->close();
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $conn->query('SET NAMES utf8'); $sql = "SELECT vote_etudiant FROM vote";
+                        $conn->query('SET NAMES utf8'); $sql = "SELECT vote_etudiant FROM vote WHERE id = $id";
                         $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                         // output data of each row

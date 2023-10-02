@@ -122,7 +122,7 @@ $conn->close();
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $conn->query('SET NAMES utf8'); $sql = "SELECT * FROM vote_employeur";
+                        $conn->query('SET NAMES utf8'); $sql = "SELECT * FROM vote_employeur WHERE id = $id";
                         $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                         // output data of each row
@@ -144,30 +144,6 @@ $conn->close();
                         $conn->close();
 
 
-
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "Azgt3878";
-                        $db = "intra";
-
-                        // Create connection
-                        $conn = new mysqli($servername, $username, $password, $db);
-                        // Check connection
-                        if ($conn->connect_error) {
-                            die("Connection failed: " . $conn->connect_error);
-                        }
-
-                        $conn->query('SET NAMES utf8'); $sql = "SELECT vote_employeur FROM vote";
-                        $result = $conn->query($sql);
-                            if ($result->num_rows > 0) {
-                        // output data of each row
-                            while($row = $result->fetch_assoc()) {
-                                $voteEtudiant = $row["vote_employeur"];
-                            }
-                        } else {
-                            echo "0 results";
-                        }
-                        $conn->close();
 
                         ?>
 
