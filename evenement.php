@@ -127,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <input type="text" name="description" class="form.control" placeholder="Description" value="" >   
+                        <textarea class="form-control" name="description" placeholder="Description" rows="3"></textarea>  
                     </div>
 
                     <div class="form-group">
@@ -136,8 +136,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                             <select class="" name="departement">
                                 <option>Techniques de design dinterieur</option>
                                 <option>Technologie du genie metallurgique</option>
-                                <option>DEC-Bac en marketing</option>
-                                <option>Musique</option>
+                                <option>Techniques de la documentation</option>
+                                <option>Techniques d’hygiène dentaire</option>
+                                <option>Techniques de diététique</option>
+                                <option>Techniques de soins infirmiers</option>
+                                <option>Techniques de soins infirmiers destiné aux infirmières auxiliaires</option>
+                                <option>Techniques de travail social</option>
+                                <option>Techniques d’éducation à l’enfance</option>
+                                <option>Techniques policières</option>
+                                <option>Techniques de génie mécanique</option>
+                                <option>Techniques de l’informatique</option>
+                                <option>Technologie de l’architecture</option>
+                                <option>Technologie de la mécanique du bâtiment (Génie du bâtiment)</option>
+                                <option>Technologie de la mécanique industrielle (maintenance)</option>
+                                <option>Technologie du génie civil</option>
+                                <option>Technologie du génie électrique – Automatisation et contrôle</option>
+                                <option>Technologie du génie électrique : Électronique programmable</option>
+                                <option>Technologie du génie industriel</option>
                             </select>   
                     </div>
 
