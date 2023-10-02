@@ -93,6 +93,25 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     }else{
         echo"Error:".$sql."<br>".mysqli_error($conn);
     }
+
+
+    if(!$conn){
+        die("Connectionfailed:".mysqli_connect_error());
+        }
+    
+        $sql=" INSERT INTO  vote_employeur(id,nombre,bon,moyen,mauvais)
+        VALUES('$var_value','0','0','0','0')";
+    
+        if(mysqli_query($conn,$sql)){
+            echo"Enregistrement réussi";
+        }else{
+            echo"Error:".$sql."<br>".mysqli_error($conn);
+        }
+
+
+
+
+
     mysqli_close($conn);
     
 }
