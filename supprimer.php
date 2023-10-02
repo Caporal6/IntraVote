@@ -24,7 +24,7 @@ session_start();
     $dbname = "intra";
 
 
-    //Createconnection
+//Supprime Bd evenement
     $conn=new mysqli($servername,$username,$password,$dbname);
     //Checkconnection
     if($conn->connect_error){
@@ -37,7 +37,48 @@ session_start();
     echo"Record deleted successfully";
     }else{
     echo"Error deleting record:".$conn->error;
-    }$conn->close();
+    }
+    
+
+// Supprime bd employeur
+    $conn=new mysqli($servername,$username,$password,$dbname);
+    //Checkconnection
+    if($conn->connect_error){
+    die("Connectionfailed:".$conn->connect_error);
+    }
+    //sqltodeletearecord
+    $sql="DELETE FROM vote_employeur WHERE id='$id'";
+    if($conn->query($sql)===TRUE){
+        header('Location: evenement.php'); 
+    echo"Record deleted successfully";
+    }else{
+    echo"Error deleting record:".$conn->error;
+    }
+
+
+
+//Supprime bd etudiant
+    $conn=new mysqli($servername,$username,$password,$dbname);
+    //Checkconnection
+    if($conn->connect_error){
+    die("Connectionfailed:".$conn->connect_error);
+    }
+    //sqltodeletearecord
+    $sql="DELETE FROM vote_etudiant WHERE id='$id'";
+    if($conn->query($sql)===TRUE){
+        header('Location: evenement.php'); 
+    echo"Record deleted successfully";
+    }else{
+    echo"Error deleting record:".$conn->error;
+    }
+    
+    
+    
+    
+    
+    
+    
+    $conn->close();
     
 
 

@@ -67,7 +67,7 @@ if(!$conn){
         if(mysqli_query($conn,$sql)){
             echo"Enregistrement réussi";
         }else{
-            echo"Error:".$sql."<br>".mysqli_error($conn);
+
         }
         mysqli_close($conn);
 
@@ -92,7 +92,7 @@ if(!$conn){
                 if(mysqli_query($conn,$sql)){
                     echo"Enregistrement réussi";
                 }else{
-                    echo"Error:".$sql."<br>".mysqli_error($conn);
+
                 }
                 mysqli_close($conn);
 
