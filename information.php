@@ -100,8 +100,6 @@ $id = $var_value;
 
 <div class="container-fluid">
     <div class="row ">
-
-
         <div class="col-6 d-flex justify-content-center flex-wrap align-content-center  bg-primary">
             <h1><?php echo $nomT ?></h1>
         </div>
@@ -120,7 +118,7 @@ $id = $var_value;
             <h1><?php echo $heureT ?>h</h1>
         </div>
 
-        <div class="col-12  d-flex justify-content-center flex-wrap align-content-center bg-warning">
+        <div class="col-12 d-flex justify-content-center bg-warning">
             <h1><?php echo $descriptionT ?></h1>
         </div>
         

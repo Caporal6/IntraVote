@@ -164,8 +164,8 @@ if (isset($_POST['update']) && !empty($_GET['varname'])){
                     </div>
 
                     <div class="form-group">
-                        <label for="">Description</label>
-                        <input type="text" name="description" class="form.control" placeholder="Description" value="<?php echo $descriptionT;?>" >   
+                    <label for="">Description</label>
+                        <textarea class="form-control" name="description" rows="3"><?php echo $descriptionT;?></textarea>  
                     </div>
 
                     <div class="form-group">
