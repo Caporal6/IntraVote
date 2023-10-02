@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-6">
                 <form method="post" action="evenement.php">
 
 
@@ -160,8 +160,32 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
                         <input type="submit">
                 </form>
+
+
+
             </div>
+
+
+            <div class="col-6 border d-flex justify-content-center">
+                    <div class="col-4 border">
+
+                    </div>
+
+
+                    <div class="col-4 border">
+                        
+                        </div>
+
+
+                    <div class="col-4 border">
+                        
+                        </div>
+            
+
+            </div>
+
         </div>
+
     </div>
 
 
