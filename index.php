@@ -23,10 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
   $password = sha1($password,false);
                    
-  $servername = "localhost";
-  $usernameDB = "root";
-  $passwordDB = "Azgt3878";
-  $db = "intra";
+  $servername = "cours.cegep3r.info";
+  $usernameDB = "2130649";
+  $passwordDB = "2130649";
+  $db = "2130649-ricard-xavier";
 
   // Create connection
     $conn = new mysqli($servername, $usernameDB, $passwordDB, $db);

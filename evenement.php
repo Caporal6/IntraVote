@@ -74,10 +74,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "Azgt3878";
-    $dbname = "intra";
+    $servername = "cours.cegep3r.info";
+    $username = "2130649";
+    $password = "2130649";
+    $dbname = "2130649-ricard-xavier";
+
+
 
     $conn=mysqli_connect($servername,$username,$password,$dbname);
 
@@ -214,10 +216,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     
                     <?php 
                     
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "Azgt3878";
-                        $db = "intra";
+                    $servername = "cours.cegep3r.info";
+                    $username = "2130649";
+                    $password = "2130649";
+                    $db = "2130649-ricard-xavier";
 
                         // Create connection
                         $conn = new mysqli($servername, $username, $password, $db);
