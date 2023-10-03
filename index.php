@@ -9,13 +9,11 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  href="css/styleIndex.css" /> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-
+    <link rel="stylesheet"  href="css/styleIndex.css" /> 
     <title>Document</title>
 </head>
-<body >
+<body>
     
 <?php 
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -60,23 +58,25 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 
+<div class="container h-100 d-flex align-items-center container1" >
+  <div class="container " >
 
-<div class="container-fluid">
-  <div class="row m-5">
+  <div class="row">
+
     <div class="col-4"> 
     </div>
-    <div class="col-4">
+    <div class="col-4 boite ">
       <form method="post" action="index.php">
         <!-- Email input -->
         <div class="form-outline mb-4">
+          <label class="form-label" for="nom">Nom</label>
           <input type="text" name="nom" class="form-control" />
-          <label class="form-label" for="nom">User</label>
         </div>
 
         <!-- Password input -->
         <div class="form-outline mb-4">
-          <input type="password" name="mdp" class="form-control" />
-          <label class="form-label" for="mdp">Password</label>
+        <label class="form-label" for="mdp">Mot de passe</label>
+        <input type="password" name="mdp" class="form-control" />
         </div>
 
         <!-- 2 column grid layout for inline styling -->
@@ -99,11 +99,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         <!-- Register buttons -->
         <div class="text-center">
           <p>Ajouter un <a href="ajouterAdmin.php">Admin</a></p>
-          
+
         </div>
       </form>
     </div>
 
+  </div>
   </div>
 </div>
 

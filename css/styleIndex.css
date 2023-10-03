@@ -1,8 +1,65 @@
 body{
     height: 100%;
+    margin: 0;
+    padding: 0;
     background-image: radial-gradient(#000428, #004e92);
 }
 
-label{
-    color: green;
+
+label, p{
+    color: black;
+    font-size: 25px;
 }
+
+.container1{
+    min-height: 100vh;
+
+}
+
+/*
+.boite{
+
+    background-color: white;
+    border-radius: 25px;
+    padding-top: 17px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 17px;
+    transition: all 1s;
+    
+}
+
+.boite:hover{
+
+    border-bottom: 5px solid red;
+    border-right: 5px solid red;
+    background-color: white;
+    border-radius: 25px;
+    padding-top: 17px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 17px;
+
+    
+}
+*/
+
+.boite {
+    border-bottom: 5px ridge rgb(88, 88, 88);
+    border-right: 5px ridge rgb(88, 88, 88);
+    background: linear-gradient(to right, red,  red), linear-gradient(to right, blue, blue), linear-gradient(to bottom, red,  red), linear-gradient(to bottom, blue, blue);
+    background-color: white;
+    border-radius: 7px;
+    background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%;
+    background-size: 0% 3px, 0% 3px, 3px 0%, 3px 0%;
+    /* 2px is border thickness */
+    
+    background-repeat: no-repeat;
+    transition: all 1s;
+  }
+  
+  .boite:hover {
+    background-size: 100% 3px, 100% 3px, 3px 100%, 3px 100%;
+    /* 2px is border thickness */
+  }
+  
