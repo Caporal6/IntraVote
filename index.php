@@ -81,16 +81,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         <div class="row mb-4">
           <div class="col d-flex justify-content-center">
             <!-- Checkbox -->
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-              <label class="form-check-label" for="form2Example31"> Remember me </label>
-            </div>
+
           </div>
 
-          <div class="col">
-            <!-- Simple link -->
-            <a href="#!">Forgot password?</a>
-          </div>
         </div>
 
         <!-- Submit button -->
@@ -103,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
         <!-- Register buttons -->
         <div class="text-center">
-          <p>Not a member? <a href="ajouterAdmin.php">Register</a></p>
+          <p>Ajouter un <a href="ajouterAdmin.php">Admin</a></p>
           
         </div>
       </form>
