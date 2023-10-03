@@ -75,10 +75,10 @@ if (isset($_POST['update']) && !empty($_GET['varname'])){
         $departement = trojan($_POST["departement"]);
     }
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "Azgt3878";
-    $dbname = "intra";
+    $servername = "cours.cegep3r.info";
+    $username = "2130649";
+    $password = "2130649";
+    $dbname = "2130649-ricard-xavier";
 
 
 
@@ -102,10 +102,10 @@ if (isset($_POST['update']) && !empty($_GET['varname'])){
 }
 
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "Azgt3878";
-    $dbname = "intra";
+        $servername = "cours.cegep3r.info";
+        $username = "2130649";
+        $password = "2130649";
+        $dbname = "2130649-ricard-xavier";
 
 
 

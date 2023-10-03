@@ -46,10 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "Azgt3878";
-    $dbname = "intra";
+    $servername = "cours.cegep3r.info";
+    $username = "2130649";
+    $password = "2130649";
+    $dbname = "2130649-ricard-xavier";
 
     $conn=mysqli_connect($servername,$username,$password,$dbname);
 

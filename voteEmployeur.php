@@ -54,10 +54,10 @@ if (isset($_POST['bon']) || isset($_POST['moyen']) || isset($_POST['mauvais']) &
 
 
 
-$servername = "localhost";
-$username = "root";
-$password = "Azgt3878";
-$dbname = "intra";
+    $servername = "cours.cegep3r.info";
+    $username = "2130649";
+    $password = "2130649";
+    $dbname = "2130649-ricard-xavier";
 
 
 
@@ -109,10 +109,10 @@ $conn->close();
     
                     <?php 
                     
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "Azgt3878";
-                        $db = "intra";
+                    $servername = "cours.cegep3r.info";
+                    $username = "2130649";
+                    $password = "2130649";
+                    $db = "2130649-ricard-xavier";
 
                         // Create connection
                         $conn = new mysqli($servername, $username, $password, $db);

@@ -47,10 +47,10 @@ echo $var_value;
 
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "Azgt3878";
-$dbname = "intra";
+$servername = "cours.cegep3r.info";
+$username = "2130649";
+$password = "2130649";
+$dbname = "2130649-ricard-xavier";
 
 $conn=mysqli_connect($servername,$username,$password,$dbname);
 
@@ -72,10 +72,10 @@ if(!$conn){
         mysqli_close($conn);
 
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "Azgt3878";
-        $dbname = "intra";
+        $servername = "cours.cegep3r.info";
+        $username = "2130649";
+        $password = "2130649";
+        $dbname = "2130649-ricard-xavier";
         
         $conn=mysqli_connect($servername,$username,$password,$dbname);
         
