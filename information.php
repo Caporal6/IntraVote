@@ -19,6 +19,9 @@ $id = $var_value;
 </head>
 <body>
 
+<a href="evenement.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Evenement.php</a> 
+
+
 <?php
 
 $servername = "cours.cegep3r.info";
