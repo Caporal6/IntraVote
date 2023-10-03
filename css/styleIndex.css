@@ -16,34 +16,6 @@ label, p{
 
 }
 
-/*
-.boite{
-
-    background-color: white;
-    border-radius: 25px;
-    padding-top: 17px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 17px;
-    transition: all 1s;
-    
-}
-
-.boite:hover{
-
-    border-bottom: 5px solid red;
-    border-right: 5px solid red;
-    background-color: white;
-    border-radius: 25px;
-    padding-top: 17px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 17px;
-
-    
-}
-*/
-
 .boite {
     border-bottom: 5px ridge rgb(88, 88, 88);
     border-right: 5px ridge rgb(88, 88, 88);

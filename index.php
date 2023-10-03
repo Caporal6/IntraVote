@@ -63,9 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
   <div class="row">
 
-    <div class="col-4"> 
+    <div class="col-2"> 
     </div>
-    <div class="col-4 boite ">
+    <div class="col-8 boite ">
       <form method="post" action="index.php">
         <!-- Email input -->
         <div class="form-outline mb-4">
@@ -79,14 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         <input type="password" name="mdp" class="form-control" />
         </div>
 
-        <!-- 2 column grid layout for inline styling -->
-        <div class="row mb-4">
-          <div class="col d-flex justify-content-center">
-            <!-- Checkbox -->
 
-          </div>
-
-        </div>
 
         <!-- Submit button -->
 
