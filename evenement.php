@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  href="css/styleIndex.css" /> 
+    <link rel="stylesheet"  href="css/styleEvenement.css" /> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Document</title>
 </head>
@@ -193,23 +193,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-12">
             <table class="table">
                 <thead>
                     <tr>
         
-                        <th scope="col">#id</th>
                         <th scope="col">nom</th>
                         <th scope="col">lieux</th>
                         <th scope="col">date</th>
                         <th scope="col">heure</th>
-                        <th scope="col">description</th>
-                        <th scope="col">departement</th>
                         <th scope="col">vote</th>
+                        <th scope="col">voté</th>
+                        <th scope="col">Information</th>
                         <th scope="col">Modifier</th>
                         <th scope="col">Supprimer</th>
-                        <th scope="col">Vote</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -235,16 +234,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                         // output data of each row
                             while($row = $result->fetch_assoc()) {
                                 $var_value = $row["id"];
-                                echo '<tr><th scope="row">'. $row["id"].'</th>
-                                <td>'. $row["nom"].'</td>
+                                echo '<tr><th scope="row">'. $row["nom"].'</th>
                                 <td>'. $row["lieux"].'</td>
                                 <td>'. $row["date"].'</td>
                                 <td>'. $row["heure"].'</td> 
-                                <td>'. $row["description"].'</td>
-                                <td>'. $row["departement"].'</td> 
                                 <td>'. $row["vote"].'</td>
-                                <td><a href="information.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Information</a></td>
                                 <td><a href="choixVote.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Voter</a></td>
+                                <td><a href="information.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Information</a></td>
                                 <td><a href="modifier.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">modifier.php</a>   </td>
                                 <td><a href="supprimer.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Supprimer</a></td>
                                 </tr>';  

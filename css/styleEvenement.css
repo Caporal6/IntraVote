@@ -1,7 +1,11 @@
 body{
     height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(#000428, #004e92);
 }
 
 label {
     color: white;
+    font-size: 25px;
 }
