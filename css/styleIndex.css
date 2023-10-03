@@ -1,7 +1,8 @@
 body{
     height: 100%;
+    background-image: radial-gradient(#000428, #004e92);
 }
 
-p{
+label{
     color: blue;
 }
