@@ -145,29 +145,7 @@ $conn->close();
 
 
 
-                        $servername = "cours.cegep3r.info";
-                        $username = "2130649";
-                        $password = "2130649";
-                        $db = "2130649-ricard-xavier";
 
-                        // Create connection
-                        $conn = new mysqli($servername, $username, $password, $db);
-                        // Check connection
-                        if ($conn->connect_error) {
-                            die("Connection failed: " . $conn->connect_error);
-                        }
-
-                        $conn->query('SET NAMES utf8'); $sql = "SELECT vote_etudiant FROM vote WHERE id = $id";
-                        $result = $conn->query($sql);
-                            if ($result->num_rows > 0) {
-                        // output data of each row
-                            while($row = $result->fetch_assoc()) {
-                                $voteEtudiant = $row["vote_etudiant"];
-                            }
-                        } else {
-                            echo "0 results";
-                        }
-                        $conn->close();
 
                         ?>
 
