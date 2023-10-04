@@ -103,13 +103,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 ?>
 
 
-    <div class="container">
+    <div class="container ">
         <div class="row">
-            <div class="col-8">
+            <div class="col-8  ">
                 <form method="post" action="evenement.php">
                 <p>-Ajouter un Évenement-</p>
 
-                    <div class="form-group">
+                    <div class="form-group ">
                         <label for="">Nom: </label>
                         <input type="text" name="nom" class="form.control" placeholder="Nom" value="" required>   
                     </div>
@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                     <div class="form-group">
                         <label for="">Département: </label>
                         <!--<input type="text"  class="form.control" placeholder="Département" value="" > -->
-                            <select class="form-control" name="departement">
+                            <select class="form-control w-50" name="departement">
                                 <option>Techniques de design dinterieur</option>
                                 <option>Technologie du genie metallurgique</option>
                                 <option>Techniques de la documentation</option>
@@ -194,10 +194,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     </div>
 
 
-<div class="container">
-    <div class="row mt-5">
-        <div class="col-12">
-            <table class="table">
+<div class="container ">
+    <div class="row mt-5 ">
+        <div class="col-12 ">
+            <table class="table ">
                 <thead>
                     <tr>
         
@@ -205,7 +205,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                         <th scope="col">lieux</th>
                         <th scope="col">date</th>
                         <th scope="col">heure</th>
-                        <th scope="col">vote</th>
                         <th scope="col">voté</th>
                         <th scope="col">Information</th>
                         <th scope="col">Modifier</th>
@@ -236,11 +235,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                         // output data of each row
                             while($row = $result->fetch_assoc()) {
                                 $var_value = $row["id"];
-                                echo '<tr style="color"><th scope="row">'. $row["nom"].'</th>
+                                echo '<tr><th scope="row">'. $row["nom"].'</th>
                                 <td>'. $row["lieux"].'</td>
                                 <td>'. $row["date"].'</td>
                                 <td>'. $row["heure"].'</td> 
-                                <td>'. $row["vote"].'</td>
                                 <td><a href="choixVote.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Voter</a></td>
                                 <td><a href="information.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Information</a></td>
                                 <td><a href="modifier.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">modifier.php</a>   </td>
