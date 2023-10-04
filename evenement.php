@@ -107,37 +107,37 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         <div class="row">
             <div class="col-8">
                 <form method="post" action="evenement.php">
-
+                <p>-Ajouter un Évenement-</p>
 
                     <div class="form-group">
-                        <label for="">Nom</label>
-                        <input type="text" name="nom" class="form.control" placeholder="Nom" value=""  >   
+                        <label for="">Nom: </label>
+                        <input type="text" name="nom" class="form.control" placeholder="Nom" value="" required>   
                     </div>
 
                     <div class="form-group">
-                        <label for="">Lieux</label>
-                        <input type="text" name="lieux" class="form.control" placeholder="Lieux" value="" >   
+                        <label for="">Lieux: </label>
+                        <input type="text" name="lieux" class="form.control" placeholder="Lieux" value="" required>   
                     </div>
 
                     <div class="form-group">
-                        <label for="">Date</label>
-                        <input type="date" name="date" class="form.control" placeholder="Date" value="" >   
+                        <label for="">Date: </label>
+                        <input type="date" name="date" class="form.control" placeholder="Date" value="" required>   
                     </div>
                     
                     <div class="form-group">
-                        <label for="">Heure</label>
-                        <input type="time" name="heure" class="form.control" placeholder="Heure" value="" >   
+                        <label for="">Heure: </label>
+                        <input type="time" name="heure" class="form.control" placeholder="Heure" value="" required>   
                     </div>
 
                     <div class="form-group">
-                        <label for="">Description</label>
-                        <textarea class="form-control" name="description" placeholder="Description" rows="3" maxlength="250"></textarea>  
+                        <label for="">Description: </label>
+                        <textarea class="form-control w-50" name="description" placeholder="Description" rows="3" maxlength="250" required></textarea>  
                     </div>
 
                     <div class="form-group">
-                        <label for="">Département</label>
+                        <label for="">Département: </label>
                         <!--<input type="text"  class="form.control" placeholder="Département" value="" > -->
-                            <select class="" name="departement">
+                            <select class="form-control" name="departement">
                                 <option>Techniques de design dinterieur</option>
                                 <option>Technologie du genie metallurgique</option>
                                 <option>Techniques de la documentation</option>
@@ -162,7 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 
-                        <input type="submit">
+                        <input type="submit" class="btn btn-primary btn-lg active mt-3">
                 </form>
 
 
@@ -213,7 +213,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody >
     
                     <?php 
                     
@@ -236,7 +236,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                         // output data of each row
                             while($row = $result->fetch_assoc()) {
                                 $var_value = $row["id"];
-                                echo '<tr><th scope="row">'. $row["nom"].'</th>
+                                echo '<tr style="color"><th scope="row">'. $row["nom"].'</th>
                                 <td>'. $row["lieux"].'</td>
                                 <td>'. $row["date"].'</td>
                                 <td>'. $row["heure"].'</td> 
