@@ -8,6 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="css/styleIndex.css" /> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Document</title>
 </head>
@@ -20,19 +21,16 @@ session_start();
 
 
 
-<div class="container">
+<div class="container h-100 d-flex align-items-center container1">
+    <div class="container ">
     <div class="row">
-        <div class="col-12">
+        <h1 class="yowtf d-flex justify-content-center flex-wrap align-content-center">-Admin-</h1>
+    <div class="col-2"> 
+    </div>
+        <div class="col-8 p-3 boite">
             <table class="table">
                 <thead>
-                    <tr>
-        
-                        <th scope="col">#id</th>
-                        <th scope="col">nom</th>
-                        <th scope="col">password</th>
-                        <th scope="col">modifier</th>
-                        <th scope="col">supprimer</th>
-                    </tr>
+
                 </thead>
                 <tbody>
     
@@ -57,9 +55,7 @@ session_start();
                         // output data of each row
                             while($row = $result->fetch_assoc()) {
                                 $var_value = $row["id"];
-                                echo '<tr><th scope="row">'. $row["id"].'</th>
-                                <td>'. $row["nom"].'</td>
-                                <td>'. $row["password"].'</td>
+                                echo '<tr><th scope="row">'. $row["nom"].'</th>
                                 <td><a href="modifierAdmin.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Modifier</a></td>
                                 <td><a href="supprimerAdmin.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Supprimer</a></td>
                                 </tr>';  
@@ -72,9 +68,24 @@ session_start();
                 </tbody>
             </table>
 
+            <div class="row">
+            <div class="col-6">
+                <div class="text-center">
+                <p>Ajouter un <a href="ajouterAdmin.php">Admin</a></p>
 
-            <a href="evenement.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Evenement.php</a>
+                </div>
+            </div>
+
+            <div class="col-6 d-flex justify-content-center flex-wrap align-content-center">
+                <a href="evenement.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Évenement</a>
+            </div>
+            </div>
+
+
+
         </div>
+
+    </div>
     </div>
 </div>
 

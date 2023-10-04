@@ -9,6 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="css/styleIndex.css" /> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <title>Document</title>
@@ -25,23 +26,26 @@ echo $var_value;
 
 
 
-<div class="container-fluid  ">
+<div class="container h-100 d-flex align-items-center container1 " >
+  <div class="container" >
 
-    <div class="row m-5">
+  <div class="row">
 
+  <div class="col-12 d-flex justify-content-center flex-wrap align-content-center ">
+    <div class="col-6 d-flex justify-content-center flex-wrap align-content-center "> 
+        <a href="vote.php?varname=<?php echo $var_value?>" class="btn btn-primary btn-lg active test" role="button" aria-pressed="true">Etudiant</a>
+    </div>
+    <div class="col-6 d-flex justify-content-center flex-wrap align-content-center ">
 
-        <div class="col-6 d-flex justify-content-center">
-
-        <a href="vote.php?varname=<?php echo $var_value?>" class="btn btn-primary btn-lg active " role="button" aria-pressed="true">Etudiant</a>
-        </div>
-
-        <div class="col-6 d-flex justify-content-center">
 
         <a href="voteEmployeur.php?varname=<?php echo $var_value?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Employeur</a>
-        </div>
     </div>
-          
+    </div>
+  </div>
+  </div>
 </div>
+
+
 
 
 

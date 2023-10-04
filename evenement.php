@@ -178,12 +178,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
                     <div class="col-4  d-flex justify-content-center flex-wrap align-content-center">
-                    <p><?php echo $_SESSION["utilisateur"] ?></p>
+                    <a href="toutAdmin.php" aria-pressed="true"><p><?php echo $_SESSION["utilisateur"] ?></p></a>
                     </div>
 
 
                     <div class="col-4  d-flex justify-content-start flex-wrap align-content-center ">
-                    <a href="toutAdmin.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Info</a>
+                    
+                    <a href="Index.php"><i class="fa-solid fa-right-from-bracket fa-2xl"></i></a>
                         </div>
             
                 </div>
@@ -282,11 +283,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
     ?>
 
-<?php
-  // Set session variables
-    $_SESSION["connexion"] = true; 
 
-?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
