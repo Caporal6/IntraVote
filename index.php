@@ -9,8 +9,9 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet"  href="css/styleIndex.css" /> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
     <title>Document</title>
 </head>
 <body>
@@ -65,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
     <div class="col-2"> 
     </div>
-    <div class="col-8 boite ">
+    <div class="col-8 boite">
       <form method="post" action="index.php">
         <!-- Email input -->
         <div class="form-outline mb-4">
