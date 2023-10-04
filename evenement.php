@@ -169,7 +169,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
             </div>
 
 
-            <div class="col-6 border d-flex justify-content-center ">
+            <div class="col-6  border ">
+                <div class="row">
                     <div class="col-4 border d-flex justify-content-center flex-wrap align-content-center">
                         <p>Icon</p>
                     </div>
@@ -184,7 +185,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                     <a href="toutAdmin.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Info</a>
                         </div>
             
-
+                </div>
             </div>
 
         </div>
