@@ -9,6 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="css/styleEvenement.css" /> 
+    <script src="https://kit.fontawesome.com/e1c2b55580.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Document</title>
 </head>
@@ -104,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-8">
                 <form method="post" action="evenement.php">
 
 
@@ -169,19 +170,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
             </div>
 
 
-            <div class="col-6  border ">
-                <div class="row">
-                    <div class="col-4 border d-flex justify-content-center flex-wrap align-content-center">
-                        <p>Icon</p>
+            <div class="col-4  ">
+                <div class="row d-flex justify-content-end">
+                    <div class="col-1  d-flex justify-content-center flex-wrap align-content-center">
+                    <i class="fa-regular fa-circle-user fa-2xl" style="color: #ffffff;"></i>
                     </div>
 
 
-                    <div class="col-4 border d-flex justify-content-center flex-wrap align-content-center">
-                    <p>Nom</p>
+                    <div class="col-4  d-flex justify-content-center flex-wrap align-content-center">
+                    <p><?php echo $_SESSION["utilisateur"] ?></p>
                     </div>
 
 
-                    <div class="col-4 border d-flex justify-content-center flex-wrap align-content-center">
+                    <div class="col-4  d-flex justify-content-start flex-wrap align-content-center ">
                     <a href="toutAdmin.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Info</a>
                         </div>
             

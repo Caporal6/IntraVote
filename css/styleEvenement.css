@@ -5,7 +5,7 @@ body{
     background-image: radial-gradient(#000428, #004e92);
 }
 
-label {
+label, p {
     color: white;
     font-size: 25px;
 }

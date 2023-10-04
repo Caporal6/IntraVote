@@ -45,8 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
   if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     //echo "<h1>Connecté</h1>";
-    header('Location: evenement.php');  
     $_SESSION["connecion"] = true;
+    $_SESSION["utilisateur"] = $nom;
+    header('Location: evenement.php');  
     } else {
     //echo "<h2>Nom d'usager ou mot de passe invalide</h2>";
     }
