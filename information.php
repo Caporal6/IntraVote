@@ -14,13 +14,13 @@ $id = $var_value;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-    <link rel="stylesheet"  href="css/styleIndex.css" /> 
+    <link rel="stylesheet"  href="css/styleInformation.css" /> 
     
     <title>Document</title>
 </head>
 <body>
 
-<a href="evenement.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Evenement.php</a> 
+<a href="evenement.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Évenement</a> 
 
 
 <?php
@@ -195,17 +195,19 @@ if(!$conn){
 <div class="container container1">
 
     <div class="row boite">
-        <div class="col-6 d-flex justify-content-center flex-wrap align-content-center ">
-            <h1><?php echo $nomT ?></h1>
+        <div class="col-4 m-4 d-flex justify-content-center flex-wrap align-content-center ">
+            <h1>Nom : <?php echo $nomT ?></h1>
         </div>
 
-        <div class="col-6 d-flex justify-content-center flex-wrap align-content-center  ">
-            <h1><?php echo $dateT ?></h1>
+        <div class="col-6 d-flex  justify-content-center flex-wrap align-content-center">
+            <h1 class=""><?php echo $departementT ?></h1>
         </div>
 
         <div class="col-4 d-flex justify-content-center flex-wrap align-content-center  ">
-            <h1><?php echo $departementT ?></h1>
+            <h1><?php echo $dateT ?></h1>
         </div>
+
+
         <div class="col-4 d-flex justify-content-center flex-wrap align-content-center  ">
             <h1><?php echo $lieuxT ?></h1>
         </div>
@@ -213,8 +215,9 @@ if(!$conn){
             <h1><?php echo $heureT ?>h</h1>
         </div>
 
-        <div class="col-12 d-flex justify-content-center ">
-            <h1><?php echo $descriptionT ?></h1>
+        <div class="col-12 mb-3  d-flex justify-content-center ">
+            <textarea class="departement" rows="4" cols="80" readonly><?php echo $descriptionT;?></textarea>  
+
         </div>
     </div>
 
@@ -222,64 +225,64 @@ if(!$conn){
         <!-- Afficher les vote etudiant    -->
         <div class="row p-5 boite">
 
-            <div class="col-6 d-flex justify-content-center flex-wrap align-content-center  ">
+            <div class="col-12 d-flex justify-content-center flex-wrap align-content-center">
                 <h1>Etudiant: </h1>
             </div>
 
 
 
-            <div class="col-6 d-flex justify-content-center flex-wrap align-content-center ">
+            <div class="col-3 d-flex justify-content-center flex-wrap align-content-center ">
                 <h1>Nombre: <?php echo $nombreET ?></h1>
             </div>
 
 
 
-            <div class="col-4 d-flex justify-content-center flex-wrap align-content-center  ">
+            <div class="col-3 d-flex justify-content-center flex-wrap align-content-center  ">
                 <h1>Bon: <?php echo $bonET ?></h1>
             </div>
 
 
 
-            <div class="col-4 d-flex justify-content-center flex-wrap align-content-center  ">
+            <div class="col-3 d-flex justify-content-center flex-wrap align-content-center  ">
                 <h1>Moyen: <?php echo $moyenET ?></h1>
             </div>
 
 
 
-            <div class="col-4 d-flex justify-content-center flex-wrap align-content-center ">
+            <div class="col-3 d-flex justify-content-center flex-wrap align-content-center ">
                 <h1>Mauvais: <?php echo $mauvaisET ?></h1>
             </div>
 
 
         </div>
 
-        <div class="row p-5 boite">
+        <div class="row p-5 boite mb-5">
 
-            <div class="col-6 d-flex justify-content-center flex-wrap align-content-center  ">
+            <div class="col-12 d-flex justify-content-center flex-wrap align-content-center  ">
                 <h1>Employeur: </h1>
             </div>
 
 
 
-            <div class="col-6 d-flex justify-content-center flex-wrap align-content-center  ">
+            <div class="col-3 d-flex justify-content-center flex-wrap align-content-center  ">
                 <h1>Nombre: <?php echo $nombreE ?></h1>
             </div>
 
 
 
-            <div class="col-4 d-flex justify-content-center flex-wrap align-content-center  ">
+            <div class="col-3 d-flex justify-content-center flex-wrap align-content-center  ">
                 <h1>Bon: <?php echo $bonE ?></h1>
             </div>
 
 
 
-            <div class="col-4 d-flex justify-content-center flex-wrap align-content-center ">
+            <div class="col-3 d-flex justify-content-center flex-wrap align-content-center ">
                 <h1>Moyen: <?php echo $moyenE ?></h1>
             </div>
 
 
 
-            <div class="col-4 d-flex justify-content-center flex-wrap align-content-center  ">
+            <div class="col-3 d-flex justify-content-center flex-wrap align-content-center  ">
                 <h1>Mauvais: <?php echo $mauvaisE ?></h1>
             </div>
 
