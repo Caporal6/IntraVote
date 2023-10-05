@@ -32,14 +32,28 @@ echo $var_value;
   <div class="row">
 
   <div class="col-12 d-flex justify-content-center flex-wrap align-content-center ">
+
+
+
+
     <div class="col-6 d-flex justify-content-center flex-wrap align-content-center "> 
-        <a href="vote.php?varname=<?php echo $var_value?>" class="btn btn-primary btn-lg active test" role="button" aria-pressed="true">Etudiant</a>
+    <button class="button">
+        <a href="vote.php?varname=<?php echo $var_value?>" class="btn btn-primary btn-lg active test" role="button" aria-pressed="true">
+            <img src="img/etudiant.png" alt="" width="200" height="200">
+        </a>       
+    </button> 
     </div>
-    <div class="col-6 d-flex justify-content-center flex-wrap align-content-center ">
 
 
-        <a href="voteEmployeur.php?varname=<?php echo $var_value?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Employeur</a>
+    <div class="col-6 d-flex justify-content-center flex-wrap align-content-center">
+        <button class="button">
+            <a href="voteEmployeur.php?varname=<?php echo $var_value?>" class="btn btn-primary btn-lg active test" role="button" aria-pressed="true">
+                <img src="img/boss.png" alt="" width="200" height="200">
+            </a>       
+        </button> 
     </div>
+
+
     </div>
   </div>
   </div>
