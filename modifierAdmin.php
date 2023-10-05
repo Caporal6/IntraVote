@@ -113,12 +113,12 @@ if (isset($_POST['update']) && !empty($_GET['varname'])){
 
                     <div class="form-group">
                         <label for="">Nom: </label>
-                        <input type="text" name="nom" class="form.control" placeholder="Nom" value="<?php echo $nomA;?>"  >   
+                        <input type="text" name="nom" class="form.control" placeholder="Nom" value="<?php echo $nomA;?>"  required>   
                     </div>
 
                     <div class="form-group">
                         <label for="">Password: </label>
-                        <input type="text" name="mdp" class="form.control" placeholder="Password" value="<?php echo $mdpA;?>" >   
+                        <input type="password" name="mdp" class="form.control" placeholder="Password" value="<?php echo $mdpA;?>" required>   
                     </div>
 
                         <button type="Submit" name="update" class="btn btn-primary btn-lg btn-block form-control mb-4">Envoyer</button>

@@ -137,7 +137,7 @@ if (isset($_POST['update']) && !empty($_GET['varname'])){
 ?>
 
 
-    <div class="container">
+    <div class="container h-100 ">
 
         <div class="row">
             <div class="col-12">
@@ -146,40 +146,55 @@ if (isset($_POST['update']) && !empty($_GET['varname'])){
 
                     <div class="form-group">
                         <label for="">Nom</label>
-                        <input type="text" name="nom" class="form.control" placeholder="Nom" value="<?php echo $nomT;?>"  >   
+                        <input type="text" name="nom" class="form.control" placeholder="Nom" value="<?php echo $nomT;?>"  required>   
                     </div>
 
                     <div class="form-group">
                         <label for="">Lieux</label>
-                        <input type="text" name="lieux" class="form.control" placeholder="Lieux" value="<?php echo $lieuxT;?>" >   
+                        <input type="text" name="lieux" class="form.control" placeholder="Lieux" value="<?php echo $lieuxT;?>" required>   
                     </div>
 
                     <div class="form-group">
                         <label for="">Date</label>
-                        <input type="date" name="date" class="form.control" placeholder="Date" value="<?php echo $dateT;?>" >   
+                        <input type="date" name="date" class="form.control" placeholder="Date" value="<?php echo $dateT;?>" required>   
                     </div>
                     
                     <div class="form-group">
                         <label for="">Heure</label>
-                        <input type="text" name="heure" class="form.control" placeholder="Heure" value="<?php echo $heureT;?>" >   
+                        <input type="text" name="heure" class="form.control" placeholder="Heure" value="<?php echo $heureT;?>" required>   
                     </div>
 
                     <div class="form-group">
                     <label for="">Description</label>
-                        <textarea class="form-control" name="description" rows="3"><?php echo $descriptionT;?></textarea>  
+                        <textarea class="form-control w-50" name="description" rows="3" required><?php echo $descriptionT;?></textarea>  
                     </div>
 
                     <div class="form-group">
                         <label for="">Département</label>
-                        <select class="" name="departement">
+                        <select class="form-control w-50" name="departement">
                                 <option>Techniques de design dinterieur</option>
                                 <option>Technologie du genie metallurgique</option>
-                                <option>DEC-Bac en marketing</option>
-                                <option>Musique</option>
+                                <option>Techniques de la documentation</option>
+                                <option>Techniques d’hygiène dentaire</option>
+                                <option>Techniques de diététique</option>
+                                <option>Techniques de soins infirmiers</option>
+                                <option>Techniques de soins infirmiers destiné aux infirmières auxiliaires</option>
+                                <option>Techniques de travail social</option>
+                                <option>Techniques d’éducation à l’enfance</option>
+                                <option>Techniques policières</option>
+                                <option>Techniques de génie mécanique</option>
+                                <option>Techniques de l’informatique</option>
+                                <option>Technologie de l’architecture</option>
+                                <option>Technologie de la mécanique du bâtiment (Génie du bâtiment)</option>
+                                <option>Technologie de la mécanique industrielle (maintenance)</option>
+                                <option>Technologie du génie civil</option>
+                                <option>Technologie du génie électrique – Automatisation et contrôle</option>
+                                <option>Technologie du génie électrique : Électronique programmable</option>
+                                <option>Technologie du génie industriel</option>
                             </select>   
                     </div>
 
-                        <input type="submit" name="update">
+                        <input type="submit" class="btn btn-primary btn-lg active mt-3" name="update">
                 </form>
             </div>
         </div>

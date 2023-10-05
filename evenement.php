@@ -184,7 +184,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
                     <div class="col-4  d-flex justify-content-start flex-wrap align-content-center ">
                     
-                    <a href="Index.php"><i class="fa-solid fa-right-from-bracket fa-2xl"></i></a>
+                    <a href="Index.php">
+                        <i class="fa-solid fa-right-from-bracket fa-2xl"><?php
+                        // Set session variables
+                            $_SESSION["connexion"] = false;?>
+                        </i>
+                    </a>
                         </div>
             
                 </div>
@@ -195,7 +200,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     </div>
 
 
-<div class="container ">
+<div class="container mb-5">
     <div class="row mt-5 ">
         <div class="col-12 ">
             <table class="table ">
