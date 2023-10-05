@@ -44,8 +44,7 @@ label, p, tbody{
   }
 
   .boite2 {
-    border-bottom: 5px ridge rgb(88, 88, 88);
-    border-right: 5px ridge rgb(88, 88, 88);
+
     background: linear-gradient(to right, red,  red), linear-gradient(to right, blue, blue), linear-gradient(to bottom, red,  red), linear-gradient(to bottom, blue, blue);
     background-color: inherit;
     border-radius: 7px;

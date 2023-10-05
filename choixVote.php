@@ -36,19 +36,19 @@ echo $var_value;
 
 
 
-    <div class="col-6 d-flex justify-content-center flex-wrap align-content-center "> 
+    <div class="col-6 d-flex justify-content-center flex-wrap align-content-center"> 
     <button class="button">
-        <a href="vote.php?varname=<?php echo $var_value?>" class="btn btn-primary btn-lg active test" role="button" aria-pressed="true">
-            <img src="img/etudiant.png" alt="" width="200" height="200">
+        <a href="vote.php?varname=<?php echo $var_value?>" class="btn btn-primary btn-lg active  boite2" role="button" aria-pressed="true">
+            <img src="img/etudiant.png" alt="" width="300" height="300">
         </a>       
     </button> 
     </div>
 
 
     <div class="col-6 d-flex justify-content-center flex-wrap align-content-center">
-        <button class="button">
-            <a href="voteEmployeur.php?varname=<?php echo $var_value?>" class="btn btn-primary btn-lg active test" role="button" aria-pressed="true">
-                <img src="img/boss.png" alt="" width="200" height="200">
+        <button class="button ">
+            <a href="voteEmployeur.php?varname=<?php echo $var_value?>" class="btn btn-primary btn-lg active boite2" role="button" aria-pressed="true">
+                <img src="img/boss.png" alt="" width="300" height="300">
             </a>       
         </button> 
     </div>

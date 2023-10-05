@@ -17,7 +17,7 @@ session_start();
 </head>
 <body>
 
-    <a href="evenement.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Evenement.php</a> 
+
 
 
 
@@ -124,40 +124,46 @@ $conn->close();
 
 
 
-    <form action="" method="POST">
-    <div class="container container1">
-        <div class="row ">
+<div class="col-12 d-flex justify-content-end">
+            <a href="evenement.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Quittez</a> 
+        </div>
+    <form action="" method="POST" >
+<div class="container d-flex align-items-center justify-content-center container1 ">
 
         <input class="big_b" type="hidden" name="nombre2" value="<?php echo $nombre ?>" /> 
         <input class="big_b" type="hidden" name="bon2" value="<?php echo $bon ?>" /> 
 
-        <div class="col-4 d-flex justify-content-center flex-wrap align-content-center">
-        <button class="" type="submit" name="mauvais" value="Next">
-            <img src="img/Smileys.png" alt="" width="200" height="200">
+        <div class="col-4 pb-1 d-flex justify-content-center flex-wrap align-content-center boite2">
+        <button class="button" type="submit" name="mauvais" value="Next">
+            <img src="img/Smileys.png" alt="" width="295" height="290">
         </button> 
         </div>
 
 
         <input class="big_b" type="hidden" name="moyen2" value="<?php echo $moyen ?>" /> 
 
-        <div class="col-4 d-flex justify-content-center flex-wrap align-content-center">
+        <div class="col-4 d-flex justify-content-center flex-wrap align-content-center boite2">
             <button class="" type="submit" name="moyen" value="Next">
-                <img src="img/SmileysMoyen.png" alt="Girl in a jacket" width="200" height="200">
+                <img src="img/SmileysMoyen.png" alt="Girl in a jacket" width="300" height="300">
             </button> 
         </div>
 
-        <div class="col-4 d-flex justify-content-center flex-wrap align-content-center">
+        <div class="col-4 d-flex justify-content-center flex-wrap align-content-center boite2">
             <button class="" type="submit" name="bon" value="Next">
-                <img src="img/SmileysBon.png" alt="Girl in a jacket" width="200" height="200">
+                <img src="img/SmileysBon.png" alt="Girl in a jacket" width="300" height="300">
             </button> 
         </div>
+
+
 
 
         <input class="big_b" type="hidden" name="mauvais2" value="<?php echo $mauvais ?>" /> 
-
         </div>
-    </div>
-    </form>        
+
+</div>
+
+
+    </form>              
 
 
 
