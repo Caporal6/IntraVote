@@ -1,6 +1,9 @@
 <?php
 // On démarre toujours la session en haut et dans tous les fichiers.
 session_start();
+if($_SESSION["connexion"] == false){
+    header('Location: index.php'); 
+}
 ?>
 
 <!DOCTYPE html>
@@ -161,7 +164,7 @@ if (isset($_POST['update']) && !empty($_GET['varname'])){
                     
                     <div class="form-group">
                         <label for="">Heure</label>
-                        <input type="text" name="heure" class="form.control" placeholder="Heure" value="<?php echo $heureT;?>" required>   
+                            <input type="time" name="heure" class="form.control" placeholder="Heure" value="<?php echo $heureT;?>" required>     
                     </div>
 
                     <div class="form-group">

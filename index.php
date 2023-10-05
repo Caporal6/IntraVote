@@ -1,6 +1,7 @@
 <?php
 // On démarre toujours la session en haut et dans tous les fichiers.
 session_start();
+$_SESSION["connexion"] = false; 
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
   if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     //echo "<h1>Connecté</h1>";
-    $_SESSION["connecion"] = true;
+    $_SESSION["connexion"] = true; 
     $_SESSION["utilisateur"] = $nom;
     header('Location: evenement.php');  
     } else {
@@ -102,11 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
   </div>
 </div>
 
-<?php
-  // Set session variables
-    $_SESSION["connexion"] = true; 
 
-?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>

@@ -1,6 +1,9 @@
 <?php
 // On démarre toujours la session en haut et dans tous les fichiers.
 session_start();
+if($_SESSION["connexion"] == false){
+    header('Location: index.php'); 
+}
 ?>
 
 <!DOCTYPE html>
@@ -72,29 +75,31 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 }
 ?>
 
-<div class="container  container1">
+<div class="container   h-100 d-flex align-items-center container1">
+<div class="container  m-5" >
         <div class="row">
             <div class="col-2">
             </div>
-            <div class="col-8">
+            <div class="col-8 boite">
             <form method="post" action="ajouterAdmin.php">
 
 
-                <div class="form-group">
+                <div class="form-group m-2">
                     <label for="">Nom</label>
-                    <input type="text" name="nom" class="form.control" placeholder="Nom" value=""  >   
+                    <input type="text" name="nom" class="form.control" placeholder="Nom" value="" required >   
                 </div>
 
-                <div class="form-group">
+                <div class="form-group m-2">
                     <label for="">Password</label>
-                    <input type="password" name="password" class="form.control" placeholder="Password" value="" >   
+                    <input type="password" name="password" class="form.control" placeholder="Password" value="" required>   
                 </div>
 
-                    <input type="submit">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block form-control mb-4">Envoyer</button>
             </form>
             </div>
 
             </div>
+        </div>
         </div>
     </div>
 

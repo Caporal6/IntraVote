@@ -1,6 +1,9 @@
 <?php
 // On démarre toujours la session en haut et dans tous les fichiers.
 session_start();
+if($_SESSION["connexion"] == false){
+    header('Location: index.php'); 
+}
 
 
 $var_value = $_GET['varname'];

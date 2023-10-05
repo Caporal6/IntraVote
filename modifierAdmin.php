@@ -1,6 +1,9 @@
 <?php
 // On démarre toujours la session en haut et dans tous les fichiers.
 session_start();
+if($_SESSION["connexion"] == false){
+    header('Location: index.php'); 
+}
 ?>
 
 <!DOCTYPE html>
@@ -118,7 +121,7 @@ if (isset($_POST['update']) && !empty($_GET['varname'])){
 
                     <div class="form-group">
                         <label for="">Password: </label>
-                        <input type="password" name="mdp" class="form.control" placeholder="Password" value="<?php echo $mdpA;?>" required>   
+                        <input type="password" name="mdp" class="form.control" placeholder="Password" value="" required>   
                     </div>
 
                         <button type="Submit" name="update" class="btn btn-primary btn-lg btn-block form-control mb-4">Envoyer</button>
