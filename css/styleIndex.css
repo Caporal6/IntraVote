@@ -6,6 +6,10 @@ body{
     background-image: radial-gradient(#000428, #004e92);
 }
 
+button{
+  background-color: inherit;
+}
+
 
 label, p, tbody{
     color: black;
