@@ -133,7 +133,7 @@ $conn->close();
         <input class="big_b" type="hidden" name="nombre2" value="<?php echo $nombre ?>" /> 
         <input class="big_b" type="hidden" name="bon2" value="<?php echo $bon ?>" /> 
 
-        <div class="col-4 pb-1 d-flex justify-content-center flex-wrap align-content-center boite2">
+        <div class="col-4 pb-1 d-flex justify-content-center flex-wrap align-content-center ">
         <button class="button" type="submit" name="mauvais" value="Next">
             <img src="img/Smileys.png" alt="" width="295" height="290">
         </button> 
@@ -142,13 +142,13 @@ $conn->close();
 
         <input class="big_b" type="hidden" name="moyen2" value="<?php echo $moyen ?>" /> 
 
-        <div class="col-4 d-flex justify-content-center flex-wrap align-content-center boite2">
+        <div class="col-4 d-flex justify-content-center flex-wrap align-content-center ">
             <button class="" type="submit" name="moyen" value="Next">
                 <img src="img/SmileysMoyen.png" alt="Girl in a jacket" width="300" height="300">
             </button> 
         </div>
 
-        <div class="col-4 d-flex justify-content-center flex-wrap align-content-center boite2">
+        <div class="col-4 d-flex justify-content-center flex-wrap align-content-center ">
             <button class="" type="submit" name="bon" value="Next">
                 <img src="img/SmileysBon.png" alt="Girl in a jacket" width="300" height="300">
             </button> 

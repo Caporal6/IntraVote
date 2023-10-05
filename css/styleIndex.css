@@ -13,6 +13,11 @@ button{
   background: none;
 }
 
+button:focus img{
+  width: 350px;
+  height: 350px;
+}
+
 
 label, p, tbody{
     color: black;
