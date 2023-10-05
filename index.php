@@ -45,8 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
   if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     //echo "<h1>Connecté</h1>";
-    header('Location: evenement.php');  
     $_SESSION["connecion"] = true;
+    $_SESSION["utilisateur"] = $nom;
+    header('Location: evenement.php');  
     } else {
     //echo "<h2>Nom d'usager ou mot de passe invalide</h2>";
     }
@@ -60,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 <div class="container h-100 d-flex align-items-center container1" >
-  <div class="container " >
+  <div class="container  m-5" >
 
   <div class="row">
 
@@ -84,15 +85,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
         <!-- Submit button -->
 
-          <button type="Submit" class="btn btn-primary btn-lg btn-block form-control">Sign in</button>
-
+          <button type="Submit" class="btn btn-primary btn-lg btn-block form-control mb-4">Sign in</button>
 
 
 
 
         <!-- Register buttons -->
         <div class="text-center">
-          <p>Ajouter un <a href="ajouterAdmin.php">Admin</a></p>
+
 
         </div>
       </form>

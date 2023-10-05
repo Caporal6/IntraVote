@@ -5,11 +5,11 @@ body{
     background-image: radial-gradient(#000428, #004e92);
 }
 
-label {
+label, p, tbody{
     color: white;
     font-size: 25px;
 }
 
-tr{
-    background-image: radial-gradient(#000428, #004e92); 
+tbody{
+    background-color: green;
 }

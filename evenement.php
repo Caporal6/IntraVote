@@ -9,6 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="css/styleEvenement.css" /> 
+    <script src="https://kit.fontawesome.com/e1c2b55580.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Document</title>
 </head>
@@ -102,41 +103,41 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 ?>
 
 
-    <div class="container">
+    <div class="container ">
         <div class="row">
-            <div class="col-6">
+            <div class="col-8  ">
                 <form method="post" action="evenement.php">
+                <p>-Ajouter un Évenement-</p>
 
-
-                    <div class="form-group">
-                        <label for="">Nom</label>
-                        <input type="text" name="nom" class="form.control" placeholder="Nom" value=""  >   
+                    <div class="form-group ">
+                        <label for="">Nom: </label>
+                        <input type="text" name="nom" class="form.control" placeholder="Nom" value="" required>   
                     </div>
 
                     <div class="form-group">
-                        <label for="">Lieux</label>
-                        <input type="text" name="lieux" class="form.control" placeholder="Lieux" value="" >   
+                        <label for="">Lieux: </label>
+                        <input type="text" name="lieux" class="form.control" placeholder="Lieux" value="" required>   
                     </div>
 
                     <div class="form-group">
-                        <label for="">Date</label>
-                        <input type="date" name="date" class="form.control" placeholder="Date" value="" >   
+                        <label for="">Date: </label>
+                        <input type="date" name="date" class="form.control" placeholder="Date" value="" required>   
                     </div>
                     
                     <div class="form-group">
-                        <label for="">Heure</label>
-                        <input type="time" name="heure" class="form.control" placeholder="Heure" value="" >   
+                        <label for="">Heure: </label>
+                        <input type="time" name="heure" class="form.control" placeholder="Heure" value="" required>   
                     </div>
 
                     <div class="form-group">
-                        <label for="">Description</label>
-                        <textarea class="form-control" name="description" placeholder="Description" rows="3" maxlength="250"></textarea>  
+                        <label for="">Description: </label>
+                        <textarea class="form-control w-50" name="description" placeholder="Description" rows="3" maxlength="250" required></textarea>  
                     </div>
 
                     <div class="form-group">
-                        <label for="">Département</label>
+                        <label for="">Département: </label>
                         <!--<input type="text"  class="form.control" placeholder="Département" value="" > -->
-                            <select class="" name="departement">
+                            <select class="form-control w-50" name="departement">
                                 <option>Techniques de design dinterieur</option>
                                 <option>Technologie du genie metallurgique</option>
                                 <option>Techniques de la documentation</option>
@@ -161,7 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 
-                        <input type="submit">
+                        <input type="submit" class="btn btn-primary btn-lg active mt-3">
                 </form>
 
 
@@ -169,22 +170,24 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
             </div>
 
 
-            <div class="col-6 border d-flex justify-content-center ">
-                    <div class="col-4 border d-flex justify-content-center flex-wrap align-content-center">
-                        <p>Icon</p>
+            <div class="col-4  ">
+                <div class="row d-flex justify-content-end">
+                    <div class="col-1  d-flex justify-content-center flex-wrap align-content-center">
+                    <i class="fa-regular fa-circle-user fa-2xl" style="color: #ffffff;"></i>
                     </div>
 
 
-                    <div class="col-4 border d-flex justify-content-center flex-wrap align-content-center">
-                    <p>Nom</p>
+                    <div class="col-4  d-flex justify-content-center flex-wrap align-content-center">
+                    <a href="toutAdmin.php" aria-pressed="true"><p><?php echo $_SESSION["utilisateur"] ?></p></a>
                     </div>
 
 
-                    <div class="col-4 border d-flex justify-content-center flex-wrap align-content-center">
-                    <a href="toutAdmin.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Info</a>
+                    <div class="col-4  d-flex justify-content-start flex-wrap align-content-center ">
+                    
+                    <a href="Index.php"><i class="fa-solid fa-right-from-bracket fa-2xl"></i></a>
                         </div>
             
-
+                </div>
             </div>
 
         </div>
@@ -192,10 +195,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     </div>
 
 
-<div class="container">
-    <div class="row mt-5">
-        <div class="col-12">
-            <table class="table">
+<div class="container ">
+    <div class="row mt-5 ">
+        <div class="col-12 ">
+            <table class="table ">
                 <thead>
                     <tr>
         
@@ -203,7 +206,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                         <th scope="col">lieux</th>
                         <th scope="col">date</th>
                         <th scope="col">heure</th>
-                        <th scope="col">vote</th>
                         <th scope="col">voté</th>
                         <th scope="col">Information</th>
                         <th scope="col">Modifier</th>
@@ -211,7 +213,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody >
     
                     <?php 
                     
@@ -238,7 +240,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                                 <td>'. $row["lieux"].'</td>
                                 <td>'. $row["date"].'</td>
                                 <td>'. $row["heure"].'</td> 
-                                <td>'. $row["vote"].'</td>
                                 <td><a href="choixVote.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Voter</a></td>
                                 <td><a href="information.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Information</a></td>
                                 <td><a href="modifier.php?varname='.$var_value.'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">modifier.php</a>   </td>
@@ -282,11 +283,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
     ?>
 
-<?php
-  // Set session variables
-    $_SESSION["connexion"] = true; 
 
-?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>

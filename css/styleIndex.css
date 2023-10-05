@@ -7,7 +7,7 @@ body{
 }
 
 
-label, p{
+label, p, tbody{
     color: black;
     font-size: 25px;
 }
@@ -34,4 +34,8 @@ label, p{
   .boite:hover {
     background-size: 100% 3px, 100% 3px, 3px 100%, 3px 100%;
     /* 2px is border thickness */
+  }
+
+  .test{
+    font-size: 45px;
   }
