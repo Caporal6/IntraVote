@@ -8,6 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="css/styleIndex.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <title>Document</title>
@@ -100,25 +101,30 @@ if (isset($_POST['update']) && !empty($_GET['varname'])){
 ?>
 
 
-    <div class="container">
+    <div class="container h-100 d-flex align-items-center container1">
+    <div class="container  m-5" >
         <div class="row">
-            <div class="col-12">
+        <div class="col-2 ">
+
+        </div>
+            <div class="col-8 p-5 d-flex justify-content-center flex-wrap align-content-center boite">
                 <form method="post" action="">
 
 
                     <div class="form-group">
-                        <label for="">Nom</label>
+                        <label for="">Nom: </label>
                         <input type="text" name="nom" class="form.control" placeholder="Nom" value="<?php echo $nomA;?>"  >   
                     </div>
 
                     <div class="form-group">
-                        <label for="">Password</label>
+                        <label for="">Password: </label>
                         <input type="text" name="mdp" class="form.control" placeholder="Password" value="<?php echo $mdpA;?>" >   
                     </div>
 
-                        <input type="submit" name="update">
+                        <button type="Submit" name="update" class="btn btn-primary btn-lg btn-block form-control mb-4">Envoyer</button>
                 </form>
             </div>
+        </div>
         </div>
     </div>
 
