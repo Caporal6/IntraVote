@@ -1,6 +1,7 @@
 <?php
 // On démarre toujours la session en haut et dans tous les fichiers.
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -185,9 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                     <div class="col-4  d-flex justify-content-start flex-wrap align-content-center ">
                     
                     <a href="Index.php">
-                        <i class="fa-solid fa-right-from-bracket fa-2xl"><?php
-                        // Set session variables
-                            $_SESSION["connexion"] = false;?>
+                        <i class="fa-solid fa-right-from-bracket fa-2xl">
                         </i>
                     </a>
                         </div>

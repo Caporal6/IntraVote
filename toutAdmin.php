@@ -24,7 +24,7 @@ session_start();
 <div class="container h-100 d-flex align-items-center container1">
     <div class="container ">
     <div class="row">
-        <h1 class="yowtf d-flex justify-content-center flex-wrap align-content-center">-Admin-</h1>
+        <h1 class="hblanc d-flex justify-content-center flex-wrap align-content-center">-Admin-</h1>
     <div class="col-2"> 
     </div>
         <div class="col-8 p-3 boite">

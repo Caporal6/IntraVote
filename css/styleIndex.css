@@ -18,6 +18,11 @@ button:focus img{
   height: 350px;
 }
 
+.hblanc{
+  color: white;
+  font-size: 60px;
+}
+
 
 label, p, tbody{
     color: black;
