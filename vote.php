@@ -133,11 +133,11 @@ $conn->close();
                                 $bon = $row["Bon"];
                                 $moyen = $row["Moyen"];
                                 $mauvais = $row["Mauvais"];
-                                echo '<tr><th scope="row">'. $row["id"].'</th><td>'. $row["Nombre"].'</td>
+                                /*echo '<tr><th scope="row">'. $row["id"].'</th><td>'. $row["Nombre"].'</td>
                                 <td>'. $bon.'</td>
                                 <td>'. $row["Moyen"].'</td>
                                 <td>'. $row["Mauvais"].'</td>
-                                </tr>'; 
+                                </tr>'; */
                             }
                         } else {
                             echo "0 results";
@@ -160,15 +160,16 @@ $conn->close();
 </div>
 
 
-<div class="container ">
-    <div class="row ">
+
     <form action="" method="POST">
+    <div class="container container1 ">
+    <div class="row ">
 
         <input class="big_b" type="hidden" name="nombre2" value="<?php echo $nombre ?>" /> 
         <input class="big_b" type="hidden" name="bon2" value="<?php echo $bon ?>" /> 
 
-        <div class="col-4 d-flex justify-content-center flex-wrap align-content-center">
-        <button class="" type="submit" name="mauvais" value="Next">
+        <div class="col-4 d-flex justify-content-center flex-wrap align-content-center boite2">
+        <button class="button" type="submit" name="mauvais" value="Next">
             <img src="img/Smileys.png" alt="" width="200" height="200">
         </button> 
         </div>
@@ -190,7 +191,8 @@ $conn->close();
 
 
         <input class="big_b" type="hidden" name="mauvais2" value="<?php echo $mauvais ?>" /> 
-
+        </div>
+</div>
 
     </form>        
 
@@ -198,8 +200,7 @@ $conn->close();
 
 
 
-    </div>
-</div>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
